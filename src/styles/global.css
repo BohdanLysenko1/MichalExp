@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles to ensure perfect Lighthouse scores */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-gray-900 bg-white antialiased;
+  }
+  a {
+    @apply underline-offset-4 transition-colors duration-150 ease-in-out;
+  }
+}
