@@ -4,7 +4,7 @@ import { Dialog, DialogTrigger, DialogContent } from "./ui/dialog";
 export default function ContactCTA() {
   const [open, setOpen] = React.useState(false);
   return (
-    <section className="w-full py-16 bg-blue-50 flex flex-col items-center justify-center">
+    <section id="contact" className="w-full py-16 bg-blue-50 flex flex-col items-center justify-center">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
         Ready to transform your space?
       </h2>

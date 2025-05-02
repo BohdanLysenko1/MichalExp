@@ -30,7 +30,7 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="w-full py-16 bg-white">
+    <section id="faq" className="w-full py-16 bg-white">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">
           Frequently Asked Questions

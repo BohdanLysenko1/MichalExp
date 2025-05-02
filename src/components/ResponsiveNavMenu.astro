@@ -1,35 +1,10 @@
----
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-} from "./ui/navigation-menu";
----
-<NavigationMenu>
-  <NavigationMenuList>
-    <NavigationMenuItem>
-      <NavigationMenuLink href="/" class="px-4 py-2">Home</NavigationMenuLink>
-    </NavigationMenuItem>
-    <NavigationMenuItem>
-      <NavigationMenuLink href="/about" class="px-4 py-2">About</NavigationMenuLink>
-    </NavigationMenuItem>
-    <NavigationMenuItem>
-      <NavigationMenuLink href="/services" class="px-4 py-2">Services</NavigationMenuLink>
-    </NavigationMenuItem>
-    <NavigationMenuItem>
-      <NavigationMenuTrigger>More</NavigationMenuTrigger>
-      <NavigationMenuContent>
-        <div class="flex flex-col bg-white rounded-md shadow p-2 min-w-[160px]">
-          <NavigationMenuLink href="/projects" class="block px-4 py-2">Projects</NavigationMenuLink>
-          <NavigationMenuLink href="/gallery" class="block px-4 py-2">Gallery</NavigationMenuLink>
-          <NavigationMenuLink href="/testimonials" class="block px-4 py-2">Testimonials</NavigationMenuLink>
-          <NavigationMenuLink href="/faq" class="block px-4 py-2">FAQ</NavigationMenuLink>
-          <NavigationMenuLink href="/contact" class="block px-4 py-2">Contact</NavigationMenuLink>
-        </div>
-      </NavigationMenuContent>
-    </NavigationMenuItem>
-  </NavigationMenuList>
-</NavigationMenu>
+<nav class="w-full">
+  <ul class="flex gap-6 items-center justify-end">
+    <li><a href="#" class="px-4 py-2 rounded hover:bg-blue-100 hover:text-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-300">Home</a></li>
+    <li><a href="#services" class="px-4 py-2 rounded hover:bg-blue-100 hover:text-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-300">Services</a></li>
+    <li><a href="#portfolio" class="px-4 py-2 rounded hover:bg-blue-100 hover:text-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-300">Portfolio</a></li>
+    <li><a href="#testimonials" class="px-4 py-2 rounded hover:bg-blue-100 hover:text-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-300">Testimonials</a></li>
+    <li><a href="#faq" class="px-4 py-2 rounded hover:bg-blue-100 hover:text-blue-700 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-300">FAQ</a></li>
+    <li><a href="#contact" class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-300">Contact</a></li>
+  </ul>
+</nav>

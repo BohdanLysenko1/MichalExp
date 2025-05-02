@@ -1,6 +1,5 @@
 ---
-layout: "../layouts/BaseLayout.astro"
-title: "Home"
+import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import TrustSection from "../components/TrustSection.astro";
 import ServicesOverview from "../components/ServicesOverview.astro";
@@ -10,11 +9,14 @@ import FAQSection from "../components/FAQSection.tsx";
 import ContactCTA from "../components/ContactCTA.tsx";
 import SimpleFooter from "../components/SimpleFooter.astro";
 ---
-<HeroSection />
-<TrustSection />
-<ServicesOverview />
-<PortfolioTeaser />
-<Testimonials />
-<FAQSection client:only="react" />
-<ContactCTA client:only="react" />
-<SimpleFooter />
+
+<BaseLayout title="Home">
+  <HeroSection />
+  <TrustSection />
+  <ServicesOverview />
+  <PortfolioTeaser />
+  <Testimonials />
+  <FAQSection client:only="react" />
+  <ContactCTA client:only="react" />
+  <SimpleFooter />
+</BaseLayout>
