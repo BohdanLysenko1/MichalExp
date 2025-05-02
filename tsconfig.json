@@ -11,7 +11,10 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": ["astro/client"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src", "content"],
   "exclude": ["node_modules"]
