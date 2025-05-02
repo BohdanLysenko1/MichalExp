@@ -1,0 +1,38 @@
+---
+// Testimonials.astro: Displays 3 customer testimonials with avatar, name, quote, and service performed.
+const testimonials = [
+  {
+    name: "Maria S.",
+    avatar: "/pictures/testimonial1.jpg",
+    service: "Kitchen Remodel",
+    quote: "MichalExp transformed our outdated kitchen into a modern masterpiece. The team was professional, on time, and exceeded our expectations!",
+  },
+  {
+    name: "James R.",
+    avatar: "/pictures/testimonial2.jpg",
+    service: "Bathroom Renovation",
+    quote: "From start to finish, the process was smooth and stress-free. We love our new bathroom and highly recommend MichalExp!",
+  },
+  {
+    name: "Linda K.",
+    avatar: "/pictures/testimonial3.jpg",
+    service: "Basement Finishing",
+    quote: "Our basement is now the favorite room in the house. Quality work and great communication throughout the project.",
+  },
+];
+---
+<section class="w-full py-16 bg-blue-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Testimonials</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map(({ name, avatar, service, quote }) => (
+        <div class="bg-white rounded-xl shadow flex flex-col items-center p-8 text-center">
+          <img src={avatar} alt={name + ' headshot'} class="w-16 h-16 rounded-full mb-4 object-cover border-2 border-blue-200 shadow-sm" loading="lazy" />
+          <blockquote class="italic text-gray-600 mb-4">“{quote}”</blockquote>
+          <div class="font-semibold text-gray-900">{name}</div>
+          <div class="text-sm text-gray-500">{service}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

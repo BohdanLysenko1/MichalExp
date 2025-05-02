@@ -3,6 +3,16 @@ layout: "../layouts/BaseLayout.astro"
 title: "Home"
 import HeroSection from "../components/HeroSection.astro";
 import TrustSection from "../components/TrustSection.astro";
+import ServicesOverview from "../components/ServicesOverview.astro";
+import PortfolioTeaser from "../components/PortfolioTeaser.astro";
+import Testimonials from "../components/Testimonials.astro";
+import FAQSection from "../components/FAQSection.tsx";
+import ContactCTA from "../components/ContactCTA.tsx";
 ---
 <HeroSection />
 <TrustSection />
+<ServicesOverview />
+<PortfolioTeaser />
+<Testimonials />
+<FAQSection client:only="react" />
+<ContactCTA client:only="react" />
