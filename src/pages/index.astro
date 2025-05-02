@@ -8,6 +8,7 @@ import PortfolioTeaser from "../components/PortfolioTeaser.astro";
 import Testimonials from "../components/Testimonials.astro";
 import FAQSection from "../components/FAQSection.tsx";
 import ContactCTA from "../components/ContactCTA.tsx";
+import SimpleFooter from "../components/SimpleFooter.astro";
 ---
 <HeroSection />
 <TrustSection />
@@ -16,3 +17,4 @@ import ContactCTA from "../components/ContactCTA.tsx";
 <Testimonials />
 <FAQSection client:only="react" />
 <ContactCTA client:only="react" />
+<SimpleFooter />
