@@ -1,0 +1,35 @@
+---
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+} from "./ui/navigation-menu";
+---
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/" class="px-4 py-2">Home</NavigationMenuLink>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/about" class="px-4 py-2">About</NavigationMenuLink>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/services" class="px-4 py-2">Services</NavigationMenuLink>
+    </NavigationMenuItem>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>More</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <div class="flex flex-col bg-white rounded-md shadow p-2 min-w-[160px]">
+          <NavigationMenuLink href="/projects" class="block px-4 py-2">Projects</NavigationMenuLink>
+          <NavigationMenuLink href="/gallery" class="block px-4 py-2">Gallery</NavigationMenuLink>
+          <NavigationMenuLink href="/testimonials" class="block px-4 py-2">Testimonials</NavigationMenuLink>
+          <NavigationMenuLink href="/faq" class="block px-4 py-2">FAQ</NavigationMenuLink>
+          <NavigationMenuLink href="/contact" class="block px-4 py-2">Contact</NavigationMenuLink>
+        </div>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>

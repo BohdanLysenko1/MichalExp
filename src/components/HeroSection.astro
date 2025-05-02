@@ -1,0 +1,47 @@
+---
+
+---
+<nav class="sticky top-0 z-50 w-full max-w-5xl mx-auto mt-6 mb-8 px-6 py-4 bg-white/90 rounded-2xl shadow-xl flex items-center justify-between backdrop-blur-md">
+  <a href="/" class="flex items-center gap-2 text-2xl font-bold font-playfair">
+    <img src="/pictures/michalLogo.png" alt="MichalExp Logo" class="h-9 w-auto" />
+    MichalExp
+  </a>
+  <div class="flex gap-8 text-lg font-medium">
+    <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+    <a href="/projects" class="hover:text-blue-600 transition-colors">Projects</a>
+    <a href="/contact" class="hover:text-blue-600 transition-colors">Contact</a>
+  </div>
+</nav>
+<section class="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-neutral-100">
+  <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 px-4 py-12 md:py-0 min-h-screen">
+    <!-- Left: Headline, tagline, CTA -->
+    <div class="flex-1 flex flex-col items-start justify-center max-w-xl">
+      <h1 class="text-5xl md:text-6xl font-bold font-playfair mb-4 text-gray-900 leading-tight">
+        Transforming Chicago Homes
+      </h1>
+      <p class="text-lg md:text-xl text-gray-700 mb-6">
+        Remodeling excellence for kitchens, baths, basements & more. Serving Chicago and all suburbs.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block rounded-full shadow-xl px-10 py-4 text-lg font-bold bg-gradient-to-r from-sky-400 to-blue-500 text-white hover:from-sky-500 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200"
+        role="button"
+        aria-label="Request a Free Estimate"
+      >
+        Request a Free Estimate
+      </a>
+    </div>
+    <!-- Right: Image with blur placeholder -->
+    <div class="flex-1 flex justify-center items-center w-full md:w-1/2">
+      <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="/pictures/IMG_7977.jpg"
+          alt="Remodeling project example"
+          class="w-full h-full object-cover rounded-2xl transition duration-500"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
+</section>
