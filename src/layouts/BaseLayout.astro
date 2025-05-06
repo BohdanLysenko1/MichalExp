@@ -1,5 +1,6 @@
 ---
 import ResponsiveNavMenu from '../components/ResponsiveNavMenu.astro';
+import BackToTop from '../components/BackToTop';
 ---
 <html lang="en">
   <head>
@@ -27,5 +28,6 @@ import ResponsiveNavMenu from '../components/ResponsiveNavMenu.astro';
     <main class="flex-1 container mx-auto px-4 py-8 w-full">
       <slot />
     </main>
+    <BackToTop client:load />
   </body>
 </html>
