@@ -6,18 +6,21 @@ const testimonials = [
     service: "Kitchen Remodel",
     quote:
       "We were nervous about remodeling, but Michal and his crew made it so easy. They listened to all our ideas and even suggested a few clever touches. The kitchen feels twice as big now, and we still can't believe how smoothly everything went!",
+    image: "/pictures/kitchen/fullKitchen.jpeg"
   },
   {
     name: "James R.",
     service: "Bathroom Renovation",
     quote:
       "There was a minor delay with some tile delivery, but the team kept us updated and handled it quickly. The new bathroom is even better than we pictured. We really appreciated the attention to detail and how clean they kept the work area.",
+    image: "/pictures/bathroom/shower+tub.jpg"
   },
   {
-    name: "Linda K.",
-    service: "Basement Finishing",
+    name: "Olivia T.",
+    service: "Staircase Renovation",
     quote:
-      "Our basement used to be just storage, but now it’s where we hang out every night. The crew was friendly, always on time, and answered all our questions. It honestly feels like a whole new part of the house!",
+      "Our old staircase was creaky and outdated, but now it’s the centerpiece of our home! Michal’s team worked quickly and paid attention to every detail. The new stairs are beautiful and feel incredibly solid. We get compliments from everyone who visits!",
+    image: "/pictures/stairs/stairs1.jpeg"
   },
 ];
 ---
@@ -25,8 +28,9 @@ const testimonials = [
   <div class="container mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Testimonials</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {testimonials.map(({ name, service, quote }) => (
+      {testimonials.map(({ name, service, quote, image }) => (
         <div class="bg-white rounded-xl shadow flex flex-col items-center p-8 text-center">
+          <img src={image} alt={`Project photo for ${service}`} class="w-full h-48 object-cover rounded-lg shadow mb-4" loading="lazy" />
           <blockquote class="italic text-gray-600 mb-4">“{quote}”</blockquote>
           <div class="font-semibold text-gray-900">{name}</div>
           <div class="text-sm text-gray-500">{service}</div>
