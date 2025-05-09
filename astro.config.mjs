@@ -7,5 +7,5 @@ export default defineConfig({
     tailwind({ applyBaseStyles: true }),
     react(),
   ],
-  trailingSlash: 'always'
+  trailingSlash: 'never'
 });
