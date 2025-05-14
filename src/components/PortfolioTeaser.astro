@@ -7,7 +7,7 @@ import PortfolioTeaser from './PortfolioTeaser.tsx';
 // Build list of categories and their images
 const picsDir = new URL('../../public/pictures', import.meta.url).pathname;
 const dirNames = await fs.readdir(picsDir);
-const categories = [];
+let categories = [];
 for (const dir of dirNames) {
   const dirPath = path.join(picsDir, dir);
   const stat = await fs.stat(dirPath);
@@ -18,6 +18,8 @@ for (const dir of dirNames) {
     .map(name => `/pictures/${dir}/${name}`);
   if (images.length) categories.push({ name: dir, images });
 }
+// Remove any category named 'logo' (case-insensitive)
+categories = categories.filter(cat => cat.name.toLowerCase() !== 'logo');
 
 ---
 <PortfolioTeaser categories={categories} client:load />
