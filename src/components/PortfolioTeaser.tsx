@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
 
 type Category = {
@@ -11,7 +12,42 @@ type Props = {
 };
 
 export default function PortfolioTeaser({ categories }: Props) {
-  const [openSrc, setOpenSrc] = useState<string | null>(null);
+  // Track both open image src and its category name
+  const [open, setOpen] = useState<{
+    category: string;
+    idx: number;
+  } | null>(null);
+
+  // Keyboard navigation
+  React.useEffect(() => {
+    if (!open) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') setOpen(null);
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [open, categories]);
+
+  function nextImage() {
+    if (!open) return;
+    const cat = categories.find(c => c.name === open.category);
+    if (!cat) return;
+    setOpen({
+      category: open.category,
+      idx: (open.idx + 1) % cat.images.length
+    });
+  }
+  function prevImage() {
+    if (!open) return;
+    const cat = categories.find(c => c.name === open.category);
+    if (!cat) return;
+    setOpen({
+      category: open.category,
+      idx: (open.idx - 1 + cat.images.length) % cat.images.length
+    });
+  }
 
   return (
     <section id="portfolio" className="w-full py-16 bg-white">
@@ -26,37 +62,91 @@ export default function PortfolioTeaser({ categories }: Props) {
               <AccordionContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   {images.map((src, idx) => (
-                    <button
+                    <motion.button
                       key={src}
                       type="button"
                       className="group focus:outline-none"
-                      onClick={() => setOpenSrc(src)}
+                      onClick={() => setOpen({ category: name, idx })} // open modal with category and index
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 0.5, delay: idx * 0.08 }}
+                      style={{ position: 'relative' }}
                     >
-                      <img
+                      <motion.img
                         src={src}
                         alt={`${name} project photo ${idx + 1}`}
-                        className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
+                        className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl"
                         loading="lazy"
                       />
-                    </button>
+                      {/* Overlay on hover */}
+                      <span
+                        className="absolute inset-0 rounded-xl bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
+                        aria-hidden="true"
+                      >
+                        <svg className="w-10 h-10 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
+                      </span>
+                    </motion.button>
                   ))}
                 </div>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        {openSrc && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-            onClick={() => setOpenSrc(null)}
-          >
-            <img
-              src={openSrc}
-              alt="Enlarged project photo"
-              className="rounded-2xl max-w-3xl max-h-[80vh] shadow-2xl border-4 border-white"
-            />
-          </div>
-        )}
+        <AnimatePresence>
+          {open && (() => {
+            const cat = categories.find(c => c.name === open.category);
+            if (!cat) return null;
+            const src = cat.images[open.idx];
+            return (
+              <motion.div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+                onClick={() => setOpen(null)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                {/* Stop propagation to avoid closing when clicking on image or buttons */}
+                <motion.div
+                  className="relative"
+                  onClick={e => e.stopPropagation()}
+                  initial={{ scale: 0.85, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.85, opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                >
+                  <img
+                    src={src}
+                    alt="Enlarged project photo"
+                    className="rounded-2xl max-w-3xl max-h-[80vh] shadow-2xl"
+                  />
+                  {/* Navigation Arrows */}
+                  {cat.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg focus:outline-none"
+                        style={{ transform: 'translate(-50%, -50%)' }}
+                        aria-label="Previous image"
+                      >
+                        <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-2 shadow-lg focus:outline-none"
+                        style={{ transform: 'translate(50%, -50%)' }}
+                        aria-label="Next image"
+                      >
+                        <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                      </button>
+                    </>
+                  )}
+
+                </motion.div>
+              </motion.div>
+            );
+          })()}
+        </AnimatePresence>
       </div>
     </section>
   );
