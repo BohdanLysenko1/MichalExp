@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
+import { Disclosure } from '@headlessui/react';
+import { ChevronDown } from 'lucide-react';
 
 type Category = {
   name: string;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export default function PortfolioTeaser({ categories }: Props) {
+  // Only one section open at a time
+  const [openSection, setOpenSection] = useState<string | null>(null);
   // Track both open image src and its category name
   const [open, setOpen] = useState<{
     category: string;
@@ -53,46 +56,60 @@ export default function PortfolioTeaser({ categories }: Props) {
     <section id="portfolio" className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Our Work</h2>
-        <Accordion type="multiple" className="w-full">
+        <div className="w-full">
           {categories.map(({ name, images }) => (
-            <AccordionItem key={name} value={name} className="mb-4">
-              <AccordionTrigger className="text-2xl md:text-3xl font-semibold text-gray-900 capitalize">
-                {name}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {images.map((src, idx) => (
-                    <motion.button
-                      key={src}
-                      type="button"
-                      className="group focus:outline-none"
-                      onClick={() => setOpen({ category: name, idx })} // open modal with category and index
-                      initial={{ opacity: 0, y: 40 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.5, delay: idx * 0.08 }}
-                      style={{ position: 'relative' }}
+            <Disclosure key={name} as="div" className="mb-4">
+              {({ open }) => {
+                // Only allow one open at a time
+                const isOpen = openSection === name;
+                return (
+                  <>
+                    <Disclosure.Button
+                      className={
+                        `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-gray-900 capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
+                      }
+                      onClick={() => setOpenSection(isOpen ? null : name)}
                     >
-                      <motion.img
-                        src={src}
-                        alt={`${name} project photo ${idx + 1}`}
-                        className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl"
-                        loading="lazy"
-                      />
-                      {/* Overlay on hover */}
-                      <span
-                        className="absolute inset-0 rounded-xl bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
-                        aria-hidden="true"
-                      >
-                        <svg className="w-10 h-10 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
-                      </span>
-                    </motion.button>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
+                      {name}
+                      <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                    </Disclosure.Button>
+                    <Disclosure.Panel static={isOpen} className="overflow-hidden transition-all">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {images.map((src, idx) => (
+                          <motion.button
+                            key={src}
+                            type="button"
+                            className="group focus:outline-none"
+                            onClick={() => setOpen({ category: name, idx })}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.5, delay: idx * 0.08 }}
+                            style={{ position: 'relative' }}
+                          >
+                            <motion.img
+                              src={src}
+                              alt={`${name} project photo ${idx + 1}`}
+                              className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl"
+                              loading="lazy"
+                            />
+                            {/* Overlay on hover */}
+                            <span
+                              className="absolute inset-0 rounded-xl bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
+                              aria-hidden="true"
+                            >
+                              <svg className="w-10 h-10 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
+                            </span>
+                          </motion.button>
+                        ))}
+                      </div>
+                    </Disclosure.Panel>
+                  </>
+                );
+              }}
+            </Disclosure>
           ))}
-        </Accordion>
+        </div>
         <AnimatePresence>
           {open && (() => {
             const cat = categories.find(c => c.name === open.category);
@@ -115,11 +132,13 @@ export default function PortfolioTeaser({ categories }: Props) {
                   exit={{ scale: 0.85, opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 >
-                  <img
-                    src={src}
-                    alt="Enlarged project photo"
-                    className="rounded-2xl max-w-3xl max-h-[80vh] shadow-2xl"
-                  />
+                  <div className="aspect-[4/3] max-w-3xl max-h-[80vh] w-[90vw] bg-black flex items-center justify-center rounded-2xl overflow-hidden">
+                    <img
+                      src={src}
+                      alt="Enlarged project photo"
+                      className="object-cover w-full h-full rounded-2xl shadow-2xl"
+                    />
+                  </div>
                   {/* Navigation Arrows */}
                   {cat.images.length > 1 && (
                     <>

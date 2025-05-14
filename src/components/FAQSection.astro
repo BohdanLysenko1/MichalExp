@@ -1,6 +1,6 @@
 ---
 // FAQSection.astro: FAQ accordion using shadcn/ui Accordion (React) with 6 common questions.
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
+import FAQSection from './FAQSection.tsx';
 const faqs = [
   {
     q: "How long does a typical remodel take?",
@@ -31,17 +31,6 @@ const faqs = [
 <section class="w-full py-16 bg-white">
   <div class="container mx-auto px-4 max-w-2xl">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Frequently Asked Questions</h2>
-    <Accordion type="single" collapsible className="w-full" client:only="react">
-      {faqs.map(({ q, a }, i) => (
-        <AccordionItem key={i} value={`faq-${i}`} className="mb-2 rounded-xl bg-blue-50 border border-blue-100 overflow-hidden transition-shadow data-[state=open]:shadow-md hover:shadow">
-          <AccordionTrigger className="px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none">
-            {q}
-          </AccordionTrigger>
-          <AccordionContent className="px-6 pb-6 text-gray-700 text-base">
-            {a}
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <FAQSection client:load />
   </div>
 </section>

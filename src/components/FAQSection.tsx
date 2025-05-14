@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./ui/accordion";
+import { Disclosure } from '@headlessui/react';
+import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
@@ -29,28 +30,38 @@ const faqs = [
 ];
 
 export default function FAQSection() {
+  const [openIdx, setOpenIdx] = React.useState<number | null>(null);
   return (
     <section id="faq" className="w-full py-16 bg-white">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">
           Frequently Asked Questions
         </h2>
-        <Accordion type="single" collapsible className="w-full">
+        <div className="w-full">
           {faqs.map(({ q, a }, i) => (
-            <AccordionItem
-              key={i}
-              value={`faq-${i}`}
-              className="mb-2 rounded-xl bg-blue-50 border border-blue-100 overflow-hidden transition-shadow data-[state=open]:shadow-md hover:shadow"
-            >
-              <AccordionTrigger className="px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none">
-                {q}
-              </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6 text-gray-700 text-base">
-                {a}
-              </AccordionContent>
-            </AccordionItem>
+            <Disclosure key={i} as="div" className="mb-2 rounded-xl bg-blue-50 border border-blue-100 overflow-hidden transition-shadow">
+              {({ open }) => {
+                const isOpen = openIdx === i;
+                return (
+                  <>
+                    <Disclosure.Button
+                      className={
+                        `flex w-full justify-between items-center px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none transition-all hover:underline ${isOpen ? 'shadow-md' : 'hover:shadow'}`
+                      }
+                      onClick={() => setOpenIdx(isOpen ? null : i)}
+                    >
+                      {q}
+                      <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                    </Disclosure.Button>
+                    <Disclosure.Panel static={isOpen} className="px-6 pb-6 text-gray-700 text-base">
+                      {a}
+                    </Disclosure.Panel>
+                  </>
+                );
+              }}
+            </Disclosure>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
