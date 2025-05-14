@@ -1,41 +1,23 @@
 ---
-// PortfolioTeaser.astro: Responsive grid of 6 images with modal (lightbox) on click.
-import { useState } from 'react';
-const images = [
-  '/pictures/bathroom/shower1.jpg',
-  '/pictures/kitchen/kitchenCabinets.jpg',
-  '/pictures/kitchen/kitchenCabinets2.jpg',
-  '/pictures/bathroom/shower2.jpg',
-  '/pictures/stairs/stairs5.jpg',
-  '/pictures/stairs/stairs4.jpg',
-];
+// PortfolioTeaser.astro: Responsive grid of work images categorized by directory
+import fs from 'fs/promises';
+import path from 'path';
+import PortfolioTeaser from './PortfolioTeaser.tsx';
+
+// Build list of categories and their images
+const picsDir = new URL('../../public/pictures', import.meta.url).pathname;
+const dirNames = await fs.readdir(picsDir);
+const categories = [];
+for (const dir of dirNames) {
+  const dirPath = path.join(picsDir, dir);
+  const stat = await fs.stat(dirPath);
+  if (!stat.isDirectory()) continue;
+  const files = await fs.readdir(dirPath);
+  const images = files
+    .filter(name => /\.(jpe?g|png)$/i.test(name))
+    .map(name => `/pictures/${dir}/${name}`);
+  if (images.length) categories.push({ name: dir, images });
+}
+
 ---
-<section id="portfolio" class="w-full py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Our Work</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {images.map((src, idx) => (
-        <button
-          type="button"
-          class="group focus:outline-none"
-          onClick={() => setOpen(idx)}
-        >
-          <img
-            src={src}
-            alt={`Project photo ${idx + 1}`}
-            class="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
-            loading="lazy"
-          />
-        </button>
-      ))}
-    </div>
-    {typeof open === 'number' && (
-      <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setOpen(null)}>
-        <img src={images[open]} alt="Enlarged project photo" class="rounded-2xl max-w-3xl max-h-[80vh] shadow-2xl border-4 border-white" />
-      </div>
-    )}
-  </div>
-</section>
-<script is:inline>
-  const [open, setOpen] = useState(null);
-</script>
+<PortfolioTeaser categories={categories} client:load />
