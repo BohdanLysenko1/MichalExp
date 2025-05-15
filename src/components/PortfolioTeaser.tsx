@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Disclosure } from '@headlessui/react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ShowerHead, ChefHat, Landmark, Sofa } from 'lucide-react';
 
 type Category = {
   name: string;
@@ -65,14 +65,32 @@ export default function PortfolioTeaser({ categories }: Props) {
                 return (
                   <>
                     <Disclosure.Button
-                      className={
-                        `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-[color:var(--primary)] capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
-                      }
-                      onClick={() => setOpenSection(isOpen ? null : name)}
-                    >
-                      {name}
-                      <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-                    </Disclosure.Button>
+  className={
+    `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-[color:var(--primary)] capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
+  }
+  onClick={() => setOpenSection(isOpen ? null : name)}
+>
+  <span className="flex items-center gap-3">
+    {/* Thumbnail preview */}
+    {/* Category icon, unique per category */}
+      {(() => {
+        let Icon = Sofa;
+        if (/bathroom/i.test(name)) Icon = ShowerHead;
+        else if (/kitchen/i.test(name)) Icon = ChefHat;
+        else if (/stairs?/i.test(name)) Icon = Landmark;
+        else if (/other/i.test(name)) Icon = Sofa;
+        return (
+          <Icon
+            className="w-12 h-12 rounded-lg shadow-sm border border-gray-200 p-2 bg-white transition-colors"
+            aria-hidden="true"
+            strokeWidth={1.5}
+          />
+        );
+      })()}
+    <span>{name}</span>
+  </span>
+  <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+</Disclosure.Button>
                     <Disclosure.Panel static={isOpen} className="overflow-hidden transition-all">
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {images.map((src, idx) => (
@@ -90,12 +108,12 @@ export default function PortfolioTeaser({ categories }: Props) {
                             <motion.img
                               src={src}
                               alt={`${name} project photo ${idx + 1}`}
-                              className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl"
+                              className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl !filter-none"
                               loading="lazy"
                             />
                             {/* Overlay on hover */}
                             <span
-                              className="absolute inset-0 rounded-xl bg-[color:var(--secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
+                              className="absolute inset-0 rounded-xl bg-[color:var(--secondary)]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none"
                               aria-hidden="true"
                             >
                               <svg className="w-10 h-10 text-[color:var(--accent)] opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
