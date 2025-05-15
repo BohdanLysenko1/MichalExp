@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 export default function ContactCTA() {
   const [open, setOpen] = React.useState(false);
   const [step, setStep] = React.useState(1);
-  const [formData, setFormData] = React.useState({ name: '', email: '', phone: '', address: '', projectType: '', squareFootage: '', budget: '', startDate: '', details: '' });
+  const [formData, setFormData] = React.useState({ firstName: '', lastName: '', email: '', phone: '', address: '', projectType: '', squareFootage: '', budget: '', startDate: '', details: '' });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     let { name, value } = e.target;
     if (name === 'phone') {
@@ -75,7 +75,26 @@ export default function ContactCTA() {
                 <form className="w-full flex flex-col gap-4" onSubmit={step === 1 ? handleNext : handleSubmit}>
                   {step === 1 && (
                     <>
-                      <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
+                      <div className="flex gap-4">
+                        <input
+                          type="text"
+                          name="firstName"
+                          placeholder="First Name"
+                          value={formData.firstName}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                          required
+                        />
+                        <input
+                          type="text"
+                          name="lastName"
+                          placeholder="Last Name"
+                          value={formData.lastName}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                          required
+                        />
+                      </div>
                       <input
                         type="email"
                         name="email"
