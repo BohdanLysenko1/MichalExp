@@ -53,9 +53,9 @@ export default function PortfolioTeaser({ categories }: Props) {
   }
 
   return (
-    <section id="portfolio" className="w-full py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--primary)]">Our Work</h2>
+    <section id="portfolio" className="w-full py-16 bg-[#FAF8F6]">
+      <div className="container mx-auto px-4 min-h-[300px]">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Our Work</h2>
         <div className="w-full">
           {categories.map(({ name, images }) => (
             <Disclosure key={name} as="div" className="mb-4">
@@ -65,63 +65,65 @@ export default function PortfolioTeaser({ categories }: Props) {
                 return (
                   <>
                     <Disclosure.Button
-  className={
-    `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-[color:var(--primary)] capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
-  }
-  onClick={() => setOpenSection(isOpen ? null : name)}
->
-  <span className="flex items-center gap-3">
-    {/* Thumbnail preview */}
-    {/* Category icon, unique per category */}
-      {(() => {
-        let Icon = Sofa;
-        if (/bathroom/i.test(name)) Icon = ShowerHead;
-        else if (/kitchen/i.test(name)) Icon = ChefHat;
-        else if (/stairs?/i.test(name)) Icon = Landmark;
-        else if (/other/i.test(name)) Icon = Sofa;
-        return (
-          <Icon
-            className="w-12 h-12 rounded-lg shadow-sm border border-gray-200 p-2 bg-white transition-colors"
-            aria-hidden="true"
-            strokeWidth={1.5}
-          />
-        );
-      })()}
-    <span>{name}</span>
-  </span>
-  <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-</Disclosure.Button>
-                    <Disclosure.Panel static={isOpen} className="overflow-hidden transition-all">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        {images.map((src, idx) => (
-                          <motion.button
-                            key={src}
-                            type="button"
-                            className="group focus:outline-none"
-                            onClick={() => setOpen({ category: name, idx })}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.5, delay: idx * 0.08 }}
-                            style={{ position: 'relative' }}
-                          >
-                            <motion.img
-                              src={src}
-                              alt={`${name} project photo ${idx + 1}`}
-                              className="rounded-xl w-full aspect-[4/3] object-cover shadow-md transition-shadow duration-300 group-hover:shadow-2xl !filter-none"
-                              loading="lazy"
-                            />
-                            {/* Overlay on hover */}
-                            <span
-                              className="absolute inset-0 rounded-xl bg-[color:var(--secondary)]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none"
+                      className={
+                        `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-[color:var(--primary)] capitalize py-4 transition-all duration-150 hover:underline focus:outline-none hover:bg-white/40 rounded-lg ${isOpen ? 'border-b' : ''}`
+                      }
+                      onClick={() => setOpenSection(isOpen ? null : name)}
+                    >
+                      <span className="flex items-center gap-3">
+                        {/* Thumbnail preview */}
+                        {/* Category icon, unique per category */}
+                        {(() => {
+                          let Icon = Sofa;
+                          if (/bathroom/i.test(name)) Icon = ShowerHead;
+                          else if (/kitchen/i.test(name)) Icon = ChefHat;
+                          else if (/stairs?/i.test(name)) Icon = Landmark;
+                          else if (/other/i.test(name)) Icon = Sofa;
+                          return (
+                            <Icon
+                              className="w-12 h-12 rounded-lg shadow-sm border border-gray-200 p-2 bg-white transition-colors"
                               aria-hidden="true"
+                              strokeWidth={1.5}
+                            />
+                          );
+                        })()}
+                        <span className="text-black">{name}</span>
+                      </span>
+                      <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-150 ${isOpen ? 'rotate-180' : ''}`} />
+                    </Disclosure.Button>
+                    {isOpen && (
+                      <Disclosure.Panel static className="overflow-hidden transition-[height] duration-300" style={{ willChange: 'height' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                          {images.map((src, idx) => (
+                            <motion.button
+                              key={src}
+                              type="button"
+                              className="group focus:outline-none"
+                              onClick={() => setOpen({ category: name, idx })}
+                              initial={{ opacity: 0, y: 40 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true, amount: 0.2 }}
+                              transition={{ duration: 0.5, delay: idx * 0.08 }}
+                              style={{ position: 'relative' }}
                             >
-                              <svg className="w-10 h-10 text-[color:var(--accent)] opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
-                            </span>
-                          </motion.button>
-                        ))}
-                      </div>
-                    </Disclosure.Panel>
+                              <motion.img
+                                src={src}
+                                alt={`${name} project photo ${idx + 1}`}
+                                className="w-full aspect-[4/3] rounded-xl shadow-md transition-shadow duration-300 group-hover:shadow-2xl !filter-none object-cover"
+                                loading="lazy"
+                              />
+                              {/* Overlay on hover */}
+                              <span
+                                className="absolute inset-0 rounded-xl bg-[color:var(--secondary)]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none"
+                                aria-hidden="true"
+                              >
+                                <svg className="w-10 h-10 text-[color:var(--accent)] opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
+                              </span>
+                            </motion.button>
+                          ))}
+                        </div>
+                      </Disclosure.Panel>
+                    )}
                   </>
                 );
               }}
