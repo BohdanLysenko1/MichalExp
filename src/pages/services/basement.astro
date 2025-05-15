@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Home } from 'lucide-react';
+import ContactCTA from '../../components/ContactCTA.tsx';
 ---
 
 <BaseLayout title="Basement Finishing | Our Services">
@@ -64,11 +65,11 @@ import { Home } from 'lucide-react';
         </ol>
         
         <div class="mt-8 text-center">
-          <a href="/contact" class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-sky-400 to-blue-500 text-white font-medium shadow hover:from-sky-500 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200">
-            Discuss Your Basement Project
-          </a>
+          
         </div>
+
       </div>
     </div>
   </section>
+  <ContactCTA client:load />
 </BaseLayout>
