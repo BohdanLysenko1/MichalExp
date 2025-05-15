@@ -35,12 +35,25 @@ export default function ContactCTA() {
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
         Ready to transform your space?
       </h2>
-      <button
-        className="px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white text-xl font-semibold shadow-lg hover:from-sky-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200"
-        onClick={() => setOpen(true)}
-      >
-        Schedule a Consultation
-      </button>
+      <div className="btn-conteiner">
+        <button className="btn-content" onClick={() => setOpen(true)}>
+          Schedule an Estimate
+          <span className="icon-arrow">
+            <svg width="40" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="arrow-icon-one">
+                <path d="M0 10 H40" stroke="white" strokeWidth="3"/>
+              </g>
+              <g id="arrow-icon-two">
+                <path d="M40 10 L35 5" stroke="white" strokeWidth="3"/>
+                <path d="M40 10 L35 15" stroke="white" strokeWidth="3"/>
+              </g>
+              <g id="arrow-icon-three">
+                <circle cx="47" cy="10" r="3" fill="white" />
+              </g>
+            </svg>
+          </span>
+        </button>
+      </div>
       <Transition.Root show={open} as={React.Fragment}>
         <Dialog as="div" className="fixed z-50 inset-0 overflow-y-auto" open={open} onClose={setOpen}>
           <div className="flex items-center justify-center min-h-screen px-4">
