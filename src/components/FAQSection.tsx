@@ -31,6 +31,30 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIdx, setOpenIdx] = React.useState<number | null>(null);
+  
+  // Handle accordion toggle with scroll prevention
+  const handleToggle = (index: number) => {
+    // Prevent the default scroll behavior
+    const isCurrentlyOpen = openIdx === index;
+    
+    // Toggle the accordion state
+    setOpenIdx(isCurrentlyOpen ? null : index);
+    
+    // Optional: If you want to scroll to the accordion after expanding, use this
+    // with smooth behavior instead of letting the browser jump abruptly
+    if (!isCurrentlyOpen) {
+      // Add a small delay to ensure the panel is rendered before scrolling
+      setTimeout(() => {
+        // Get the button element
+        const button = document.querySelectorAll(`#faq .disclosure-button`)[index];
+        if (button) {
+          // Scroll to element with smooth behavior
+          button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 50);
+    }
+  };
+  
   return (
     <section id="faq" className="w-full py-16 bg-white">
       <div className="container mx-auto px-4 max-w-2xl">
@@ -46,9 +70,13 @@ export default function FAQSection() {
                   <>
                     <Disclosure.Button
                       className={
-                        `flex w-full justify-between items-center px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none transition-all hover:underline ${isOpen ? 'shadow-md' : 'hover:shadow'}`
+                        `disclosure-button flex w-full justify-between items-center px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none transition-all hover:underline ${isOpen ? 'shadow-md' : 'hover:shadow'}`
                       }
-                      onClick={() => setOpenIdx(isOpen ? null : i)}
+                      onClick={(e) => {
+                        // Prevent default browser behavior
+                        e.preventDefault();
+                        handleToggle(i);
+                      }}
                     >
                       {q}
                       <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />

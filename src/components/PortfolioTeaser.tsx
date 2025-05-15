@@ -152,7 +152,7 @@ export default function PortfolioTeaser({ categories }: Props) {
                   exit={{ scale: 0.85, opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 >
-                  <div className="aspect-[4/3] max-w-3xl max-h-[80vh] w-[90vw] bg-[color:var(--secondary)] flex items-center justify-center rounded-2xl overflow-hidden">
+                  <div className="aspect-[4/3] max-w-5xl max-h-[90vh] w-[95vw] bg-[color:var(--secondary)] flex items-center justify-center rounded-2xl overflow-hidden">
                     <img
                       src={src}
                       alt="Enlarged project photo"
