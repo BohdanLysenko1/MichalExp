@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   --color-text: #ffffff;
-  --color-background: #2563eb; /* Tailwind blue-600 */
-  --color-outline: #2563eb80;
-  --color-shadow: #3b82f680; /* Tailwind blue-500, 50% opacity */
+  --color-background: #1E4D7B;
+  --color-outline: #C8A76580;
+  --color-shadow: #C8A765;
 }
 
 .btn-content {

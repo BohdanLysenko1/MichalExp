@@ -99,7 +99,7 @@ export default function ContactCTA() {
                         required
                       />
                       <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-                      <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold shadow hover:from-sky-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200">Next</button>
+                      <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Next</button>
                     </>
                   )}
                   {step === 2 && (
@@ -111,7 +111,7 @@ export default function ContactCTA() {
                       <textarea name="details" placeholder="Additional Details" value={formData.details} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none min-h-[100px]" />
                       <div className="flex justify-between">
                         <button type="button" onClick={handleBack} className="mt-4 px-6 py-3 rounded-full bg-gray-300 text-gray-700 font-semibold shadow hover:bg-gray-400 transition-all duration-200">Back</button>
-                        <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold shadow hover:from-sky-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2 transition-all duration-200">Submit</button>
+                        <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Submit</button>
                       </div>
                     </>
                   )}

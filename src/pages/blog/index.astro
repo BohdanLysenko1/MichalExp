@@ -16,7 +16,7 @@ title: "Blog"
   <ul class="space-y-6">
     {posts.map(post => (
       <li>
-        <a href={`/blog/${post.slug}`} class="text-2xl font-playfair text-blue-600 hover:underline">{post.title}</a>
+        <a href={`/blog/${post.slug}`} class="text-2xl font-playfair text-[color:var(--primary)] hover:underline">{post.title}</a>
         <p class="text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
         <p class="mt-1">{post.description}</p>
       </li>

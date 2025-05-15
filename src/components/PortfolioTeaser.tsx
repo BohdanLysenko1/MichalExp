@@ -55,7 +55,7 @@ export default function PortfolioTeaser({ categories }: Props) {
   return (
     <section id="portfolio" className="w-full py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Our Work</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--primary)]">Our Work</h2>
         <div className="w-full">
           {categories.map(({ name, images }) => (
             <Disclosure key={name} as="div" className="mb-4">
@@ -66,7 +66,7 @@ export default function PortfolioTeaser({ categories }: Props) {
                   <>
                     <Disclosure.Button
                       className={
-                        `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-gray-900 capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
+                        `flex w-full justify-between items-center text-2xl md:text-3xl font-semibold text-[color:var(--primary)] capitalize py-4 transition-all hover:underline focus:outline-none ${isOpen ? 'border-b' : ''}`
                       }
                       onClick={() => setOpenSection(isOpen ? null : name)}
                     >
@@ -95,10 +95,10 @@ export default function PortfolioTeaser({ categories }: Props) {
                             />
                             {/* Overlay on hover */}
                             <span
-                              className="absolute inset-0 rounded-xl bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
+                              className="absolute inset-0 rounded-xl bg-[color:var(--secondary)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
                               aria-hidden="true"
                             >
-                              <svg className="w-10 h-10 text-white opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
+                              <svg className="w-10 h-10 text-[color:var(--accent)] opacity-80" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16"></path></svg>
                             </span>
                           </motion.button>
                         ))}
@@ -117,7 +117,7 @@ export default function PortfolioTeaser({ categories }: Props) {
             const src = cat.images[open.idx];
             return (
               <motion.div
-                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+                className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--secondary)] opacity-70"
                 onClick={() => setOpen(null)}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -132,7 +132,7 @@ export default function PortfolioTeaser({ categories }: Props) {
                   exit={{ scale: 0.85, opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 >
-                  <div className="aspect-[4/3] max-w-3xl max-h-[80vh] w-[90vw] bg-black flex items-center justify-center rounded-2xl overflow-hidden">
+                  <div className="aspect-[4/3] max-w-3xl max-h-[80vh] w-[90vw] bg-[color:var(--secondary)] flex items-center justify-center rounded-2xl overflow-hidden">
                     <img
                       src={src}
                       alt="Enlarged project photo"
