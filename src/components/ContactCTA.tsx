@@ -31,8 +31,8 @@ export default function ContactCTA() {
   }, []);
 
   return (
-    <section id="contact" className="w-full py-16 bg-blue-50 flex flex-col items-center justify-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
+    <section id="contact" className="w-full py-16 bg-[color:var(--secondary)] flex flex-col items-center justify-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[color:var(--primary)]">
         Ready to transform your space?
       </h2>
       <div className="btn-conteiner">
@@ -70,12 +70,12 @@ export default function ContactCTA() {
               leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">Book Your Free Consultation</h3>
+                <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Book Your Free Consultation</h3>
                 <p className="mb-6 text-gray-600 text-center">Fill out the form below and our team will get in touch to discuss your project.</p>
                 <form className="w-full flex flex-col gap-4" onSubmit={step === 1 ? handleNext : handleSubmit}>
                   {step === 1 && (
                     <>
-                      <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
+                      <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
                       <input
                         type="email"
                         name="email"
@@ -84,7 +84,7 @@ export default function ContactCTA() {
                         onChange={handleChange}
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         title="Please enter a valid email address"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
                         required
                       />
                       <input
@@ -95,22 +95,22 @@ export default function ContactCTA() {
                         onChange={handleChange}
                         pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
                         title="Phone number must be in 123-456-7890 format"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
                         required
                       />
-                      <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
+                      <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
                       <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Next</button>
                     </>
                   )}
                   {step === 2 && (
                     <>
-                      <input type="text" name="projectType" placeholder="Project Type" value={formData.projectType} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-                      <input type="number" name="squareFootage" placeholder="Square Footage" value={formData.squareFootage} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-                      <input type="text" name="budget" placeholder="Budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-                      <input type="date" name="startDate" placeholder="Preferred Start Date" value={formData.startDate} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none" required />
-                      <textarea name="details" placeholder="Additional Details" value={formData.details} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none min-h-[100px]" />
+                      <input type="text" name="projectType" placeholder="Project Type" value={formData.projectType} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
+                      <input type="number" name="squareFootage" placeholder="Square Footage" value={formData.squareFootage} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
+                      <input type="text" name="budget" placeholder="Budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
+                      <input type="date" name="startDate" placeholder="Preferred Start Date" value={formData.startDate} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
+                      <textarea name="details" placeholder="Additional Details" value={formData.details} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none min-h-[100px]" />
                       <div className="flex justify-between">
-                        <button type="button" onClick={handleBack} className="mt-4 px-6 py-3 rounded-full bg-gray-300 text-gray-700 font-semibold shadow hover:bg-gray-400 transition-all duration-200">Back</button>
+                        <button type="button" onClick={handleBack} className="mt-4 px-6 py-3 rounded-full bg-gray-300 text-gray-700 font-semibold shadow hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Back</button>
                         <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Submit</button>
                       </div>
                     </>

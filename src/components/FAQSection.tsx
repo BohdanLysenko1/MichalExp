@@ -56,22 +56,20 @@ export default function FAQSection() {
   };
   
   return (
-    <section id="faq" className="w-full py-16 bg-white">
+    <section id="faq" className="w-full py-16 bg-[color:var(--background)]">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--primary)]">
           Frequently Asked Questions
         </h2>
         <div className="w-full">
           {faqs.map(({ q, a }, i) => (
-            <Disclosure key={i} as="div" className="mb-2 rounded-xl bg-blue-50 border border-blue-100 overflow-hidden transition-shadow">
+            <Disclosure key={i} as="div" className="mb-2 rounded-xl bg-[color:var(--secondary)] border border-[color:var(--primary)]/10 overflow-hidden transition-shadow">
               {({ open }) => {
                 const isOpen = openIdx === i;
                 return (
                   <>
                     <Disclosure.Button
-                      className={
-                        `disclosure-button flex w-full justify-between items-center px-6 py-4 text-lg font-medium text-left text-gray-900 focus:outline-none transition-all hover:underline ${isOpen ? 'shadow-md' : 'hover:shadow'}`
-                      }
+                      className={`disclosure-button flex w-full justify-between items-center px-6 py-4 text-lg font-medium text-left text-[color:var(--primary)] focus:outline-none transition-all hover:underline ${isOpen ? 'shadow-md' : 'hover:shadow'}`}
                       onClick={(e) => {
                         // Prevent default browser behavior
                         e.preventDefault();
@@ -81,7 +79,7 @@ export default function FAQSection() {
                       {q}
                       <ChevronDown className={`h-5 w-5 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                     </Disclosure.Button>
-                    <Disclosure.Panel static={isOpen} className="px-6 pb-6 text-gray-700 text-base">
+                    <Disclosure.Panel static={isOpen} className="px-6 pb-6 text-[color:var(--foreground)] text-base">
                       {a}
                     </Disclosure.Panel>
                   </>

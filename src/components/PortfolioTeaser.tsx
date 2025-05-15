@@ -53,9 +53,9 @@ export default function PortfolioTeaser({ categories }: Props) {
   }
 
   return (
-    <section id="portfolio" className="w-full py-16 bg-[#FAF8F6]">
+    <section id="portfolio" className="w-full py-16 bg-[color:var(--secondary)]">
       <div className="container mx-auto px-4 min-h-[300px]">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Our Work</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--primary)]">Our Work</h2>
         <div className="w-full">
           {categories.map(({ name, images }) => (
             <Disclosure key={name} as="div" className="mb-4">
