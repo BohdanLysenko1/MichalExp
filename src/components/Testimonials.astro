@@ -19,14 +19,14 @@ const testimonials = [
     name: "Olivia T.",
     service: "Staircase Renovation",
     quote:
-      "Our old staircase was creaky and outdated, but now it’s the centerpiece of our home! Michal’s team worked quickly and paid attention to every detail. The new stairs are beautiful and feel incredibly solid. We get compliments from everyone who visits!",
+      "Our old staircase was creaky and outdated, but now it's the centerpiece of our home! Michal's team worked quickly and paid attention to every detail. The new stairs are beautiful and feel incredibly solid. We get compliments from everyone who visits!",
     image: "/pictures/stairs/stairs1.jpeg"
   },
 ];
 ---
 <section id="testimonials" class="w-full py-16 bg-[color:var(--secondary)]">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-[color:var(--primary)]">Testimonials</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Testimonials</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {testimonials.map(({ name, service, quote, image }) => (
         <div class="bg-[color:var(--background)] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center p-8 text-center h-full">

@@ -5,7 +5,7 @@ import path from 'path';
 import PortfolioTeaser from './PortfolioTeaser.tsx';
 
 // Build list of categories and their images
-const picsDir = new URL('../../public/pictures', import.meta.url).pathname;
+const picsDir = path.join(process.cwd(), 'public', 'pictures');
 const dirNames = await fs.readdir(picsDir);
 let categories = [];
 for (const dir of dirNames) {
