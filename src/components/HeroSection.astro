@@ -5,7 +5,7 @@
 <section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
   <!-- Image carousel with overlay -->
   <div class="absolute inset-0 z-0 carousel-container">
-    <!-- Images will be inserted here by JavaScript -->
+    <!-- Images -->
     <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
       <img src="/pictures/bathroom/shower3.jpeg" alt="Remodeling project shower3" class="w-full h-full object-cover" />
     </div>
@@ -48,16 +48,13 @@
     
     <!-- Carousel indicators -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-wrap justify-center gap-2 max-w-xs">
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator active" data-index="0" aria-label="Go to slide 1"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="1" aria-label="Go to slide 2"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="2" aria-label="Go to slide 3"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="3" aria-label="Go to slide 4"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="4" aria-label="Go to slide 5"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="5" aria-label="Go to slide 6"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="6" aria-label="Go to slide 7"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="7" aria-label="Go to slide 8"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="8" aria-label="Go to slide 9"></button>
-      <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white carousel-indicator" data-index="9" aria-label="Go to slide 10"></button>
+      {Array(9).fill(0).map((_, i) => (
+        <button 
+          class={`w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-white active' : 'bg-white/50 hover:bg-white'} carousel-indicator`} 
+          data-index={i} 
+          aria-label={`Go to slide ${i+1}`}
+        ></button>
+      ))}
     </div>
   </div>
   
@@ -94,43 +91,35 @@
     </div>
   </div>
 </section>
+
 <script type="module">
   document.addEventListener('DOMContentLoaded', () => {
-    // Carousel functionality
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.carousel-indicator');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     let currentSlide = 0;
     let slideInterval;
-    const intervalTime = 5000; // Time between auto-slides (5 seconds)
+    const intervalTime = 5000;
     
-    // Initialize the carousel
     function startCarousel() {
-      slideInterval = setInterval(() => {
-        nextSlide();
-      }, intervalTime);
+      slideInterval = setInterval(nextSlide, intervalTime);
     }
     
-    // Stop the auto-rotation when user interacts
     function resetInterval() {
       clearInterval(slideInterval);
       startCarousel();
     }
     
-    // Show specific slide
     function showSlide(n) {
-      // Hide all slides
       slides.forEach(slide => {
         slide.classList.remove('opacity-100');
         slide.classList.add('opacity-0');
       });
       
-      // Show the target slide
       slides[n].classList.remove('opacity-0');
       slides[n].classList.add('opacity-100');
       
-      // Update indicators
       indicators.forEach(indicator => {
         indicator.classList.remove('active', 'bg-white');
         indicator.classList.add('bg-white/50');
@@ -140,19 +129,16 @@
       indicators[n].classList.remove('bg-white/50');
     }
     
-    // Next slide function
     function nextSlide() {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }
     
-    // Previous slide function
     function prevSlide() {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
     
-    // Add event listeners
     prevBtn.addEventListener('click', () => {
       prevSlide();
       resetInterval();
@@ -163,7 +149,6 @@
       resetInterval();
     });
     
-    // Indicator clicks
     indicators.forEach((indicator, index) => {
       indicator.addEventListener('click', () => {
         currentSlide = index;
@@ -172,16 +157,12 @@
       });
     });
     
-    // Show the initial slide
     showSlide(currentSlide);
-    
-    // Start the carousel
     startCarousel();
     
-    // Handle modal button if it exists
     const btn = document.querySelector('[data-estimate-button]');
     if (btn) {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', e => {
         e.preventDefault();
         window.dispatchEvent(new CustomEvent('openEstimateModal'));
       });

@@ -2,12 +2,13 @@ import * as React from "react";
 import { Disclosure } from '@headlessui/react';
 import { ChevronDown } from 'lucide-react';
 
-const faqCategories = [
+// Default comprehensive FAQ data for the dedicated FAQ page
+const defaultFaqCategories = [
   {
     title: "📝 Before We Start",
     items: [
       {
-        q: "What’s your step-by-step remodeling process?",
+        q: "What's your step-by-step remodeling process?",
         a: "Our process begins with an initial on-site consultation, continues through collaborative design and planning, permitting, demolition, construction, and ends with a detailed final walk-through to ensure every detail meets your expectations."
       },
       {
@@ -19,7 +20,7 @@ const faqCategories = [
         a: "In most cases, yes. We isolate the work area, install dust barriers, and coordinate work hours to minimize disruption. For extensive whole-home remodels, a temporary relocation may be recommended."
       },
       {
-        q: "How accurate are your initial estimates—what’s included and what isn’t?",
+        q: "How accurate are your initial estimates—what's included and what isn't?",
         a: "Your preliminary estimate is based on current material pricing and the scope defined during consultation. It includes labor, materials, and standard site protection. Allowances, permits, and unforeseen conditions are outlined separately so there are no surprises."
       },
       {
@@ -33,7 +34,7 @@ const faqCategories = [
     items: [
       {
         q: "Who will be my main point of contact and how often will I get updates?",
-        a: "You’ll be assigned a dedicated project manager who provides daily progress updates and is available to answer questions throughout the build."
+        a: "You'll be assigned a dedicated project manager who provides daily progress updates and is available to answer questions throughout the build."
       },
       {
         q: "What hours and days will crews be on-site, and how noisy/messy will it be?",
@@ -53,11 +54,11 @@ const faqCategories = [
       },
       {
         q: "What brands or materials do you commonly recommend—and can I choose my own?",
-        a: "We work with trusted brands known for durability, but you’re free to specify any product you prefer. We’ll confirm compatibility and availability."
+        a: "We work with trusted brands known for durability, but you're free to specify any product you prefer. We'll confirm compatibility and availability."
       },
       {
         q: "How do you handle supply-chain delays or back-ordered items?",
-        a: "We monitor lead times daily and order critical items early. If a delay arises, we’ll present equivalent alternatives or resequence tasks to keep the project moving."
+        a: "We monitor lead times daily and order critical items early. If a delay arises, we'll present equivalent alternatives or resequence tasks to keep the project moving."
       },
     ],
   },
@@ -70,29 +71,45 @@ const faqCategories = [
       },
       {
         q: "Will you provide maintenance tips or care instructions for new finishes?",
-        a: "Absolutely. You’ll receive a customized care guide outlining cleaning products, recommended maintenance intervals, and warranty information."
+        a: "Absolutely. You'll receive a customized care guide outlining cleaning products, recommended maintenance intervals, and warranty information."
       },
       {
-        q: "What’s the process for punch-list items or minor touch-ups?",
+        q: "What's the process for punch-list items or minor touch-ups?",
         a: "Before final payment we walk through the space with you to create a punch list. Touch-ups are completed within 5–10 business days."
       },
       {
         q: "Can I request additional upgrades later—do you keep project files on hand?",
-        a: "We archive drawings, selections, and photos, making future upgrades straightforward—just reach out and we’ll pick up where we left off."
+        a: "We archive drawings, selections, and photos, making future upgrades straightforward—just reach out and we'll pick up where we left off."
       },
     ],
   },
 ];
 
-export default function FAQSection() {
+type FAQItem = {
+  q: string;
+  a: string;
+};
+
+type FAQCategory = {
+  title: string;
+  items: FAQItem[];
+};
+
+type FAQSectionProps = {
+  faqData?: FAQCategory[];
+};
+
+export default function FAQSection({ faqData = defaultFaqCategories }: FAQSectionProps) {
   return (
-    <section id="faq" className="w-full py-16 bg-[color:var(--background)]">
+    <section id="faq" className="w-full bg-[color:var(--background)]">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-left mb-10 text-black">
-          Frequently Asked Questions
-        </h2>
+        {!faqData[0].title.includes("Frequently Asked Questions") && (
+          <h2 className="text-3xl md:text-4xl font-bold text-left mb-10 text-black">
+            Frequently Asked Questions
+          </h2>
+        )}
         <div className="space-y-4">
-          {faqCategories.map((cat, catIdx) => (
+          {faqData.map((cat, catIdx) => (
             <Disclosure
               key={catIdx}
               as="div"

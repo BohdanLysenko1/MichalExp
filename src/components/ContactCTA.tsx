@@ -1,10 +1,26 @@
 import * as React from "react";
 import { Dialog, Transition } from '@headlessui/react';
 
+// Reusable input class to reduce duplication
+const inputClass = "w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none";
+const buttonClass = "px-6 py-3 rounded-full font-semibold shadow focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200";
+
 export default function ContactCTA() {
   const [open, setOpen] = React.useState(false);
   const [step, setStep] = React.useState(1);
-  const [formData, setFormData] = React.useState({ firstName: '', lastName: '', email: '', phone: '', address: '', projectType: '', squareFootage: '', budget: '', startDate: '', details: '' });
+  const [formData, setFormData] = React.useState({ 
+    firstName: '', 
+    lastName: '', 
+    email: '', 
+    phone: '', 
+    address: '', 
+    projectType: '', 
+    squareFootage: '', 
+    budget: '', 
+    startDate: '', 
+    details: '' 
+  });
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     let { name, value } = e.target;
     if (name === 'phone') {
@@ -20,9 +36,15 @@ export default function ContactCTA() {
     }
     setFormData({ ...formData, [name]: value });
   };
+  
   const handleNext = (e: React.FormEvent) => { e.preventDefault(); setStep(2); };
   const handleBack = (e: React.FormEvent) => { e.preventDefault(); setStep(1); };
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); console.log('Estimate Request:', formData); setOpen(false); setStep(1); };
+  const handleSubmit = (e: React.FormEvent) => { 
+    e.preventDefault(); 
+    // Form would be submitted to backend here
+    setOpen(false); 
+    setStep(1); 
+  };
 
   React.useEffect(() => {
     const openHandler = () => setOpen(true);
@@ -82,7 +104,7 @@ export default function ContactCTA() {
                           placeholder="First Name"
                           value={formData.firstName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                          className={inputClass}
                           required
                         />
                         <input
@@ -91,7 +113,7 @@ export default function ContactCTA() {
                           placeholder="Last Name"
                           value={formData.lastName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                          className={inputClass}
                           required
                         />
                       </div>
@@ -103,7 +125,7 @@ export default function ContactCTA() {
                         onChange={handleChange}
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                         title="Please enter a valid email address"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                        className={inputClass}
                         required
                       />
                       <input
@@ -114,23 +136,85 @@ export default function ContactCTA() {
                         onChange={handleChange}
                         pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
                         title="Phone number must be in 123-456-7890 format"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none"
+                        className={inputClass}
                         required
                       />
-                      <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
-                      <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Next</button>
+                      <input 
+                        type="text" 
+                        name="address" 
+                        placeholder="Address" 
+                        value={formData.address} 
+                        onChange={handleChange} 
+                        className={inputClass} 
+                        required 
+                      />
+                      <button 
+                        type="submit" 
+                        className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
+                      >
+                        Next
+                      </button>
                     </>
                   )}
                   {step === 2 && (
                     <>
-                      <input type="text" name="projectType" placeholder="Project Type" value={formData.projectType} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
-                      <input type="number" name="squareFootage" placeholder="Square Footage" value={formData.squareFootage} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
-                      <input type="text" name="budget" placeholder="Budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
-                      <input type="date" name="startDate" placeholder="Preferred Start Date" value={formData.startDate} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none" required />
-                      <textarea name="details" placeholder="Additional Details" value={formData.details} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[color:var(--accent)] focus:outline-none min-h-[100px]" />
+                      <input 
+                        type="text" 
+                        name="projectType" 
+                        placeholder="Project Type" 
+                        value={formData.projectType} 
+                        onChange={handleChange} 
+                        className={inputClass} 
+                        required 
+                      />
+                      <input 
+                        type="number" 
+                        name="squareFootage" 
+                        placeholder="Square Footage" 
+                        value={formData.squareFootage} 
+                        onChange={handleChange} 
+                        className={inputClass} 
+                        required 
+                      />
+                      <input 
+                        type="text" 
+                        name="budget" 
+                        placeholder="Budget" 
+                        value={formData.budget} 
+                        onChange={handleChange} 
+                        className={inputClass} 
+                        required 
+                      />
+                      <input 
+                        type="date" 
+                        name="startDate" 
+                        placeholder="Preferred Start Date" 
+                        value={formData.startDate} 
+                        onChange={handleChange} 
+                        className={inputClass} 
+                        required 
+                      />
+                      <textarea 
+                        name="details" 
+                        placeholder="Additional Details" 
+                        value={formData.details} 
+                        onChange={handleChange} 
+                        className={`${inputClass} min-h-[100px]`} 
+                      />
                       <div className="flex justify-between">
-                        <button type="button" onClick={handleBack} className="mt-4 px-6 py-3 rounded-full bg-gray-300 text-gray-700 font-semibold shadow hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Back</button>
-                        <button type="submit" className="mt-4 px-6 py-3 rounded-full bg-[color:var(--primary)] text-white font-semibold shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">Submit</button>
+                        <button 
+                          type="button" 
+                          onClick={handleBack} 
+                          className={`mt-4 ${buttonClass} bg-gray-300 text-gray-700 hover:bg-gray-400`}
+                        >
+                          Back
+                        </button>
+                        <button 
+                          type="submit" 
+                          className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
+                        >
+                          Submit
+                        </button>
                       </div>
                     </>
                   )}

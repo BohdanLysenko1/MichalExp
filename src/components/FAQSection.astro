@@ -1,6 +1,8 @@
 ---
-// FAQSection.astro: FAQ accordion using shadcn/ui Accordion (React) with 6 common questions.
+// FAQSection.astro: FAQ accordion component that passes data to the React implementation
 import FAQSection from './FAQSection.tsx';
+
+// Simple FAQ format for the homepage
 const faqs = [
   {
     q: "How long does a typical remodel take?",
@@ -27,10 +29,16 @@ const faqs = [
     a: "We communicate transparently and work with you on any changes or unexpected issues, always providing updated timelines and costs."
   },
 ];
+
+// Convert to simplified format expected by the React component
+const simplifiedFaqs = [{
+  title: "Frequently Asked Questions",
+  items: faqs
+}];
 ---
 <section class="w-full py-16 bg-white">
   <div class="container mx-auto px-4 max-w-2xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">Frequently Asked Questions</h2>
-    <FAQSection client:load />
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Frequently Asked Questions</h2>
+    <FAQSection faqData={simplifiedFaqs} client:load />
   </div>
 </section>
