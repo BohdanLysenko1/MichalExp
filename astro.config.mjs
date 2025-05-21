@@ -7,5 +7,10 @@ export default defineConfig({
     tailwind({ applyBaseStyles: true }),
     react(),
   ],
-  trailingSlash: 'never'
+  trailingSlash: 'never',
+  vite: {
+    optimizeDeps: {
+      exclude: [], // Add problematic deps here if identified
+    },
+  },
 });
