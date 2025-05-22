@@ -22,6 +22,7 @@ const BackToTop = () => {
         isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
       aria-label="Back to top"
+      type="button"
     >
       ↑
     </button>
