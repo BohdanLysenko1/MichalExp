@@ -17,6 +17,26 @@ const { frontmatter, default: Content } = post;
 ---
 <article class="container mx-auto py-8">
   <h1 class="text-4xl font-playfair mb-4">{frontmatter.title}</h1>
-  <p class="text-sm text-gray-500 mb-8">{new Date(frontmatter.date).toLocaleDateString()}</p>
-  <Content />
+  <p class="text-sm text-gray-500 mb-2">{new Date(frontmatter.date).toLocaleDateString()}</p>
+
+  {/* Display Category */}
+  {frontmatter.category && (
+    <p class="text-md text-gray-700 mb-2">
+      <strong>Category:</strong> <a href={`/blog?category=${encodeURIComponent(frontmatter.category)}`} class="text-[color:var(--primary)] hover:underline">{frontmatter.category}</a>
+    </p>
+  )}
+
+  {/* Display Tags */}
+  {frontmatter.tags && frontmatter.tags.length > 0 && (
+    <div class="mb-6"> {/* Adjusted margin bottom for spacing before Content */}
+      <strong>Tags:</strong>
+      {frontmatter.tags.map(tag => (
+        <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-0.5 rounded-full mr-2 mb-1 hover:bg-gray-300">{tag}</a>
+      ))}
+    </div>
+  )}
+
+  <div class="prose max-w-none mt-8"> {/* Added a wrapper for Content with some top margin */}
+    <Content />
+  </div>
 </article>
