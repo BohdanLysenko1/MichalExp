@@ -140,29 +140,14 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
-"combining-astro-tailwind.md": {
-	id: "combining-astro-tailwind.md";
-  slug: "astro-tailwind-combo";
+		"blog": Record<string, {
+  id: string;
+  slug: string;
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"first-post.md": {
-	id: "first-post.md";
-  slug: "first-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"tailwind-tips.md": {
-	id: "tailwind-tips.md";
-  slug: "tailwind-tips";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-};
+  data: InferEntrySchema<"blog">;
+  render(): Render[".md"];
+}>;
 "services": Record<string, {
   id: string;
   slug: string;
