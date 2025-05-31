@@ -1,22 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import { Paintbrush } from 'lucide-react';
 ---
 
 <BaseLayout title="Premium Painting & Finishes | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/pictures/painting/interior-showcase.jpg" alt="Premium painting and finishing showcase" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
-    </div>
-    
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
     <div class="relative z-10 container-premium text-center">
       <div class="hero-content max-w-4xl mx-auto">
         <div class="inline-block text-[color:var(--accent)] mb-6">
-          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-          </svg>
+          <Paintbrush size={80} strokeWidth={1.5} />
         </div>
         <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
           Elevate Every Surface with 
@@ -92,7 +86,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
             <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-            </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Lasting Value</h3>
           <p class="text-[color:var(--muted-foreground)]">Protective finishes that maintain beauty for years to come.</p>
@@ -121,8 +114,7 @@ import ContactCTA from '../../components/ContactCTA.tsx';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Interior Painting</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete interior painting including walls, ceilings, trim, doors, and detailed millwork.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional interior painting with premium paints and meticulous preparation for lasting results.</p>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -132,8 +124,7 @@ import ContactCTA from '../../components/ContactCTA.tsx';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Exterior Painting</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Weather-resistant exterior painting for siding, trim, decks, and outdoor structures.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Weather-resistant exterior finishes that protect and beautify your home's exterior surfaces.</p>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -143,8 +134,7 @@ import ContactCTA from '../../components/ContactCTA.tsx';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Cabinet Refinishing</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Transform kitchen and bathroom cabinets with premium paint and stain finishes.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Transform kitchen and bathroom cabinets with professional refinishing and modern colors.</p>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -154,8 +144,7 @@ import ContactCTA from '../../components/ContactCTA.tsx';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Specialty Finishes</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Decorative techniques including faux finishes, textures, and custom artistic applications.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Decorative techniques including faux finishes, texture work, and artistic wall treatments.</p>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -166,7 +155,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Wallpaper & Coverings</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Expert installation of wallpaper, fabric coverings, and decorative wall treatments.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -177,65 +165,103 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Surface Restoration</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Repair and restoration of damaged surfaces before applying premium finishes.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section id="portfolio" class="py-20 bg-white">
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
-          Paint Transformation Gallery
+          Our Proven 5-Step Process
         </h2>
         <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
-          Discover the dramatic impact of professional painting and finishing work that transforms ordinary spaces into extraordinary environments.
+          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12 mb-16">
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Living Room Color Transformation</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/painting/living-room-before-after.jpg" alt="Living room paint transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
-          </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Transformed a dated living room with a sophisticated color palette, accent wall, and premium trim work.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 1 week</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Interior painting</span>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
         
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Kitchen Cabinet Refinishing</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/painting/cabinet-refinish.jpg" alt="Kitchen cabinet refinishing transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Color Consultation & Surface Analysis</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Professional color selection consultation and thorough inspection of all surfaces to be painted, identifying preparation needs and material requirements.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/painting/color-consultation.jpg" alt="Color consultation and surface analysis" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Completely updated kitchen cabinets with professional painting and new hardware for a fresh, modern look.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 2 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Cabinet refinishing</span>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Surface Preparation & Priming</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Meticulous cleaning, sanding, filling, and priming of all surfaces to ensure optimal paint adhesion and a smooth, professional finish.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 days</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/painting/surface-prep.jpg" alt="Surface preparation and priming" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Premium Paint Application</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Expert application of premium paints using professional techniques to achieve uniform coverage, clean lines, and a flawless finish.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-5 days</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/painting/paint-application.jpg" alt="Premium paint application" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Detail Work & Accent Features</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Precise trim work, accent walls, decorative finishes, and specialty techniques to add character and sophistication to your spaces.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 days</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/painting/detail-work.jpg" alt="Detail work and accent features" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Final Inspection & Touch-Ups</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Comprehensive quality review, addressing any imperfections, and providing care instructions to maintain your beautiful new paint finish.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1 day</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/painting/final-inspection.jpg" alt="Final inspection and touch-ups" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center">
-        <a href="/gallery" class="btn-secondary">
-          <span>View Complete Portfolio</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
@@ -243,3 +269,15 @@ import ContactCTA from '../../components/ContactCTA.tsx';
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+    estimateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+      });
+    });
+  });
+</script>

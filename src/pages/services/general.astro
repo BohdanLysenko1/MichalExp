@@ -1,23 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Settings } from 'lucide-react';
+import { Wrench } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
 ---
 
 <BaseLayout title="Complete Home Remodeling | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/pictures/general/whole-home-renovation.jpg" alt="Complete home remodeling showcase" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
-    </div>
-    
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
     <div class="relative z-10 container-premium text-center">
       <div class="hero-content max-w-4xl mx-auto">
         <div class="inline-block text-[color:var(--accent)] mb-6">
-          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
-          </svg>
+          <Wrench size={80} strokeWidth={1.5} />
         </div>
         <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
           Transform Your Entire Home with 
@@ -123,120 +116,153 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Whole-Home Renovations</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete home transformations with coordinated design and construction across multiple rooms.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$$ - $$$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Room Additions</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Expand your living space with seamlessly integrated new construction and design.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Open Floor Plans</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Remove walls and reconfigure spaces to create modern, flowing layouts.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Structural Repairs</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Foundation work, beam reinforcement, and structural improvements for safety and stability.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Smart Home Integration</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Modern electrical systems, automation, and technology infrastructure installation.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Custom Millwork</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Built-in cabinetry, trim work, and architectural details throughout your home.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section id="portfolio" class="py-20 bg-white">
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
-          Complete Home Transformation Gallery
+          Our Proven 5-Step Process
         </h2>
         <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
-          See how we've transformed entire homes with comprehensive renovations that enhance both form and function.
+          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12 mb-16">
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Bucktown Whole-Home Renovation</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/general/before-after-1.jpg" alt="Bucktown whole home transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
-          </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Complete renovation of a 1920s home with open floor plan, modern kitchen, updated bathrooms, and restored original details.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 12 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Whole home renovation</span>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
         
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Logan Square Addition & Remodel</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/general/before-after-2.jpg" alt="Logan Square addition transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Comprehensive Project Assessment</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We conduct thorough structural, electrical, and plumbing evaluations to understand your home's potential and create a master renovation plan.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-4 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/general/project-assessment.jpg" alt="Comprehensive project assessment" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Added a second story with master suite and office, plus first-floor kitchen and living room renovation.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 16 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Addition & renovation</span>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Design Development & Permits</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Creation of detailed architectural plans and handling all necessary permits and approvals to ensure your project meets all building codes and regulations.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-6 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/general/design-permits.jpg" alt="Design development and permits" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Structural & Systems Work</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Major structural modifications, electrical upgrades, plumbing installation, and HVAC improvements to support your home's transformation.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 4-8 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/general/structural-systems.jpg" alt="Structural and systems work" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Interior Build-Out & Finishes</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Installation of flooring, cabinetry, fixtures, and custom millwork, followed by painting and trim work to bring your vision to life.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-6 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/general/interior-buildout.jpg" alt="Interior build-out and finishes" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Final Inspections & Project Completion</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Comprehensive quality inspections, final touch-ups, and detailed walkthrough to ensure every aspect of your remodel exceeds expectations.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/general/final-inspections.jpg" alt="Final inspections and project completion" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center">
-        <a href="/gallery" class="btn-secondary">
-          <span>View Complete Portfolio</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
@@ -244,3 +270,15 @@ import ContactCTA from '../../components/ContactCTA.tsx';
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+    estimateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+      });
+    });
+  });
+</script>

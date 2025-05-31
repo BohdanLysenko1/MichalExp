@@ -1,22 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import { Trees } from 'lucide-react';
 ---
 
 <BaseLayout title="Premium Outdoor Living Spaces | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/pictures/outdoor/deck-patio-showcase.jpg" alt="Premium outdoor living space showcase" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
-    </div>
-    
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
     <div class="relative z-10 container-premium text-center">
       <div class="hero-content max-w-4xl mx-auto">
         <div class="inline-block text-[color:var(--accent)] mb-6">
-          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
+          <Trees size={80} strokeWidth={1.5} />
         </div>
         <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
           Extend Your Living with 
@@ -122,7 +116,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Custom Decks</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Multi-level composite and hardwood decks with integrated lighting and built-in seating.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -133,7 +126,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Luxury Patios</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Stone, brick, and paver patios with fire features and water elements.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -144,7 +136,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Outdoor Kitchens</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete cooking stations with grills, refrigeration, and weather-resistant cabinetry.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$ - $$$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -155,7 +146,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Pergolas & Gazebos</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Architectural shade structures with retractable canopies and integrated lighting.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -166,7 +156,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Fire Features</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Custom fire pits, fireplaces, and water features for year-round outdoor enjoyment.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -177,65 +166,103 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Landscape Integration</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional landscaping and hardscaping to complete your outdoor vision.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section id="portfolio" class="py-20 bg-white">
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
-          Outdoor Transformation Gallery
+          Our Proven 5-Step Process
         </h2>
         <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
-          See how we've transformed ordinary backyards into extraordinary outdoor living spaces that serve as natural extensions of the home.
+          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12 mb-16">
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Multi-Level Deck with Fire Feature</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/outdoor/deck-transformation.jpg" alt="Multi-level deck transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
-          </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Transformed a simple backyard into a stunning two-level composite deck with built-in fire pit and integrated lighting.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 6 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Custom deck & fire feature</span>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
         
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Complete Outdoor Kitchen & Patio</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/outdoor/kitchen-patio.jpg" alt="Outdoor kitchen and patio transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Site Analysis & Landscape Design</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We evaluate your property's drainage, sun exposure, and soil conditions to create outdoor spaces that work harmoniously with your environment.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/outdoor/site-analysis.jpg" alt="Site analysis and landscape design" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Created a resort-style outdoor kitchen with stone patio, pergola, and water feature for ultimate entertaining.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 10 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Complete outdoor living</span>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Material & Plant Selection</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Choose weather-resistant materials, outdoor furniture, and native plants that thrive in Chicago's climate while complementing your home's architecture.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/outdoor/material-selection.jpg" alt="Material and plant selection" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Hardscape Construction</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Installation of patios, walkways, retaining walls, and outdoor structures using premium materials designed to withstand Chicago winters.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-4 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/outdoor/hardscape-construction.jpg" alt="Hardscape construction" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Landscaping & Utilities</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Professional planting, irrigation system installation, and outdoor lighting setup to create a lush, functional outdoor environment.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/outdoor/landscaping-utilities.jpg" alt="Landscaping and utilities" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Finishing Touches & Maintenance Plan</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Final details, outdoor furniture placement, and comprehensive seasonal maintenance guidance to ensure your outdoor space thrives year-round.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-5 days</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/outdoor/finishing-touches.jpg" alt="Finishing touches and maintenance plan" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center">
-        <a href="/gallery" class="btn-secondary">
-          <span>View Complete Portfolio</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
@@ -243,3 +270,15 @@ import ContactCTA from '../../components/ContactCTA.tsx';
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+    estimateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+      });
+    });
+  });
+</script>

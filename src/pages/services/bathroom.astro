@@ -1,23 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Bath } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import { Bath } from 'lucide-react';
 ---
 
 <BaseLayout title="Luxury Bathroom Renovation | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/pictures/bathroom/shower3.jpeg" alt="Luxury bathroom renovation showcase" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
-    </div>
-    
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
     <div class="relative z-10 container-premium text-center">
       <div class="hero-content max-w-4xl mx-auto">
         <div class="inline-block text-[color:var(--accent)] mb-6">
-          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V6a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V7a1 1 0 00-1-1h-6z"/>
-          </svg>
+          <Bath size={80} strokeWidth={1.5} />
         </div>
         <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
           Transform Your Bathroom Into a 
@@ -123,7 +116,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Complete Renovations</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Full bathroom transformations with luxury fixtures, custom tilework, and premium finishes.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -134,7 +126,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Shower Transformations</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Walk-in showers, rainfall systems, and custom glass enclosures for the ultimate bathing experience.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -145,7 +136,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Vanity & Storage</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Custom vanities and intelligent storage solutions that maximize space and functionality.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -156,7 +146,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Lighting & Electrical</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Ambient, task, and accent lighting with modern fixtures and smart controls.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$ - $$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -167,18 +156,16 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Accessibility Features</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Grab bars, curbless showers, and aging-in-place modifications for safety and comfort.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$ - $$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2h-8a2 2 0 00-2 2v12a4 4 0 002 4h8"></path>
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Luxury Upgrades</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Heated floors, smart toilets, steam showers, and premium spa-like amenities.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
         </div>
       </div>
     </div>
@@ -205,14 +192,14 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           <div class="relative flex flex-col lg:flex-row items-center gap-8">
             <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
               <div class="glass-effect p-8 rounded-3xl">
-                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Design Consultation</h3>
-                <p class="text-[color:var(--muted-foreground)] mb-4">We assess your space, discuss your vision, and create a detailed plan that balances aesthetics, functionality, and budget.</p>
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Bathroom Design & Space Planning</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We create detailed layouts maximizing your bathroom's functionality while ensuring proper ventilation, waterproofing, and accessibility considerations.</p>
                 <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
               </div>
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/bathroom/design-consultation.jpg" alt="Design consultation process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/bathroom/design-planning.jpg" alt="Bathroom design and planning" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -220,14 +207,14 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
             <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
               <div class="glass-effect p-8 rounded-3xl">
-                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Material Selection</h3>
-                <p class="text-[color:var(--muted-foreground)] mb-4">Visit our showroom to select premium fixtures, tiles, and finishes. We guide you through options that fit your style and budget.</p>
-                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1 week</div>
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Fixture & Tile Selection</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Choose from luxury fixtures, premium tiles, and high-quality finishes in our showroom, with expert guidance on water efficiency and style coordination.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
               </div>
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/bathroom/material-selection.jpg" alt="Material selection process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/bathroom/fixture-selection.jpg" alt="Fixture and tile selection" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -235,14 +222,44 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           <div class="relative flex flex-col lg:flex-row items-center gap-8">
             <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
               <div class="glass-effect p-8 rounded-3xl">
-                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Professional Installation</h3>
-                <p class="text-[color:var(--muted-foreground)] mb-4">Our skilled craftsmen execute the renovation with precision, maintaining clean work areas and respecting your home.</p>
-                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-4 weeks</div>
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Plumbing & Waterproofing</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Complete plumbing installation and professional waterproofing systems to ensure your bathroom remains leak-free and structurally sound for decades.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
               </div>
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/bathroom/installation.jpg" alt="Professional installation" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/bathroom/plumbing-waterproofing.jpg" alt="Plumbing and waterproofing" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Tile Installation & Vanity Setup</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Precision tile installation, custom vanity mounting, and mirror placement to create a beautifully coordinated and functional bathroom space.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/bathroom/tile-installation.jpg" alt="Tile installation and vanity setup" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Fixture Installation & Final Details</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Final fixture installation, lighting setup, hardware mounting, and detailed finishing touches to deliver your spa-like bathroom retreat.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-5 days</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/bathroom/fixture-installation.jpg" alt="Fixture installation and final details" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
         </div>
@@ -309,4 +326,16 @@ import ContactCTA from '../../components/ContactCTA.tsx';
 
   <!-- React modal for consultation -->
   <ContactCTA client:load />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+      estimateButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('openEstimateModal'));
+        });
+      });
+    });
+  </script>
 </BaseLayout>

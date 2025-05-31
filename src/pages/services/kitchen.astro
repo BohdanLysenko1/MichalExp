@@ -1,23 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { ChefHat } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import { ChefHat } from 'lucide-react';
 ---
 
-<BaseLayout title="Luxury Kitchen Renovation | Chicago's Premier Remodeling Studio">
+<BaseLayout title="Luxury Kitchen Remodeling | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/pictures/kitchen/modern-kitchen.jpg" alt="Luxury kitchen renovation showcase" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
-    </div>
-    
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
     <div class="relative z-10 container-premium text-center">
       <div class="hero-content max-w-4xl mx-auto">
         <div class="inline-block text-[color:var(--accent)] mb-6">
-          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 3v7M4 10c0 2.5-1 3.5-1 5a2 2 0 0 0 4 0c0-1.5-1-2.5-1-5M7 3v7M15 3v18M19 3c-2 2.5-2 6.5 0 9M21 3c-2 2.5-2 6.5 0 9"/>
-          </svg>
+          <ChefHat size={80} strokeWidth={1.5} />
         </div>
         <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
           Create the Heart of Your Home with 
@@ -123,7 +116,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Complete Renovations</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Full kitchen transformations with custom cabinetry, premium appliances, and luxury finishes.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$ - $$$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -134,7 +126,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Cabinet Refacing</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Transform existing cabinets with new doors, drawers, and premium hardware.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -145,7 +136,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Countertop Installation</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Premium stone surfaces with precision templating and professional installation.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -156,7 +146,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Kitchen Islands</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Custom islands that add workspace, storage, and gathering space for your family.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -167,7 +156,6 @@ import ContactCTA from '../../components/ContactCTA.tsx';
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Lighting Design</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Under-cabinet, pendant, and recessed lighting for both function and ambiance.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
@@ -177,66 +165,104 @@ import ContactCTA from '../../components/ContactCTA.tsx';
             </svg>
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Appliance Integration</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Seamless installation of premium appliances with custom panel integration.</p>
-          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional-grade appliances seamlessly integrated with custom cabinetry and design.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Before/After Gallery -->
-  <section id="portfolio" class="py-20 bg-white">
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
-          Kitchen Transformation Gallery
+          Our Proven 5-Step Process
         </h2>
         <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
-          See how we've transformed ordinary kitchens into extraordinary culinary spaces that our clients love.
+          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
         </p>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12 mb-16">
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Gold Coast Modern Kitchen</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/kitchen/before-after-1.jpg" alt="Gold Coast kitchen transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
-          </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Transformed a dated 1980s kitchen into a sleek modern space with white quartz countertops, custom cabinets, and smart storage solutions.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 4 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Complete renovation</span>
-          </div>
-        </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
         
-        <div class="glass-effect p-8 rounded-3xl">
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Lincoln Square Family Kitchen</h3>
-          <div class="relative mb-6">
-            <img src="/pictures/kitchen/before-after-2.jpg" alt="Lincoln Square kitchen transformation" class="w-full h-64 object-cover rounded-xl" />
-            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Kitchen Design & Layout Planning</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We create detailed designs optimizing your kitchen's workflow, storage, and aesthetics while considering plumbing and electrical requirements.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/kitchen/design-planning.jpg" alt="Kitchen design and planning" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
-          <p class="text-[color:var(--muted-foreground)] mb-4">
-            Created an open-concept kitchen with a large island, premium appliances, and a coffee bar perfect for busy family mornings.
-          </p>
-          <div class="flex items-center gap-4 text-sm">
-            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 5 weeks</span>
-            <span class="text-[color:var(--muted-foreground)]">•</span>
-            <span class="text-[color:var(--muted-foreground)]">Layout redesign</span>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Cabinet & Appliance Selection</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Choose from premium cabinetry, countertops, and high-end appliances in our showroom, with expert guidance on functionality and style coordination.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/kitchen/cabinet-selection.jpg" alt="Cabinet and appliance selection" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Demolition & Infrastructure</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Careful removal of existing elements and installation of new plumbing, electrical, and HVAC systems to support your new kitchen layout.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/kitchen/demolition-infrastructure.jpg" alt="Kitchen demolition and infrastructure" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Cabinet Installation & Countertops</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Professional installation of custom cabinetry, precision-cut countertops, and backsplash to create the foundation of your dream kitchen.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/kitchen/cabinet-installation.jpg" alt="Cabinet installation and countertops" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Appliance Integration & Final Details</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Final appliance installation, hardware mounting, lighting setup, and detailed finishing touches to deliver your fully functional dream kitchen.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1 week</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/kitchen/appliance-integration.jpg" alt="Appliance integration and final details" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="text-center">
-        <a href="/gallery" class="btn-secondary">
-          <span>View Complete Portfolio</span>
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </a>
       </div>
     </div>
   </section>
@@ -244,3 +270,15 @@ import ContactCTA from '../../components/ContactCTA.tsx';
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+    estimateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+      });
+    });
+  });
+</script>
