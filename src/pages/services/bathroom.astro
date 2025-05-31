@@ -4,70 +4,309 @@ import { Bath } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
 ---
 
-<BaseLayout title="Bathroom Renovation | Our Services">
-  <section class="w-full py-16">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-10 text-center">
-        <div class="inline-block text-[color:var(--primary)] mb-4">
-          <Bath size={60} strokeWidth={1.5} />
+<BaseLayout title="Luxury Bathroom Renovation | Chicago's Premier Remodeling Studio">
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="/pictures/bathroom/shower3.jpeg" alt="Luxury bathroom renovation showcase" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
+    </div>
+    
+    <div class="relative z-10 container-premium text-center">
+      <div class="hero-content max-w-4xl mx-auto">
+        <div class="inline-block text-[color:var(--accent)] mb-6">
+          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0V6a1 1 0 00-1 1v10a1 1 0 001 1h6a1 1 0 001-1V7a1 1 0 00-1-1h-6z"/>
+          </svg>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Bathroom Renovation</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Modern fixtures, tiling, and spa-like upgrades for every budget.
+        <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
+          Transform Your Bathroom Into a 
+          <span class="text-[color:var(--accent)]">Luxurious Sanctuary</span>
+        </h1>
+        <p class="text-xl text-[color:var(--muted-foreground)] mb-8 max-w-2xl mx-auto leading-relaxed">
+          Create a spa-like retreat in your home with our award-winning bathroom renovation expertise, premium materials, and personalized design approach.
         </p>
-      </div>
-      
-      <div class="prose prose-lg max-w-none">
-        <p>
-          Your bathroom should be both functional and relaxing—a personal retreat within your home. Our bathroom renovation services transform ordinary bathrooms into beautiful, practical spaces that enhance your daily routine and add value to your home.
-        </p>
-        
-        <h2>Our Bathroom Renovation Services Include:</h2>
-        
-        <ul>
-          <li><strong>Complete Bathroom Remodels:</strong> Full transformations from floor to ceiling</li>
-          <li><strong>Shower & Tub Installation:</strong> Custom shower enclosures, walk-in showers, and luxury bathtubs</li>
-          <li><strong>Tile Work:</strong> Expert installation of floor and wall tiles in various materials and patterns</li>
-          <li><strong>Vanity & Cabinetry:</strong> Custom or pre-manufactured solutions for optimal storage</li>
-          <li><strong>Fixture Upgrades:</strong> Water-efficient toilets, faucets, and showerheads</li>
-          <li><strong>Lighting Solutions:</strong> Ambient, task, and accent lighting for functionality and ambiance</li>
-          <li><strong>Accessibility Features:</strong> Grab bars, curbless showers, and other aging-in-place modifications</li>
-        </ul>
-        
-        <h2>Our Bathroom Renovation Process</h2>
-        
-        <p>
-          We follow a streamlined process to deliver exceptional results with minimal disruption:
-        </p>
-        
-        <ol>
-          <li><strong>Initial Consultation:</strong> We assess your current bathroom and discuss your vision and needs</li>
-          <li><strong>Design Phase:</strong> Our designers create detailed plans that balance aesthetics and functionality</li>
-          <li><strong>Material Selection:</strong> We help you choose fixtures, tiles, and finishes that suit your style and budget</li>
-          <li><strong>Construction:</strong> Our skilled craftsmen execute the renovation with attention to detail</li>
-          <li><strong>Final Inspection:</strong> We ensure everything is properly installed and functions perfectly</li>
-        </ol>
-        
-        <h2>Bathroom Renovation Ideas</h2>
-        
-        <p>
-          Whether you're looking for a quick refresh or a complete transformation, we offer solutions for every scope and budget:
-        </p>
-        
-        <ul>
-          <li><strong>Spa-Inspired Retreats:</strong> Rainfall showers, soaking tubs, and natural elements</li>
-          <li><strong>Space-Saving Solutions:</strong> Innovative storage and fixtures for small bathrooms</li>
-          <li><strong>Luxury Upgrades:</strong> Heated floors, smart toilets, and digital shower controls</li>
-          <li><strong>Family-Friendly Bathrooms:</strong> Durable, low-maintenance materials and practical layouts</li>
-        </ul>
-        
-        <div class="mt-8 text-center">
-          
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button class="btn-primary group" data-estimate-button>
+            <span>Get Free Design Consultation</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+          <a href="#portfolio" class="btn-secondary group">
+            <span>View Bathroom Portfolio</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
         </div>
-
       </div>
     </div>
   </section>
+
+  <!-- Service Overview -->
+  <section class="py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
+    <div class="container-premium">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Your Daily Retreat Deserves Excellence
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] leading-relaxed mb-12">
+          Your bathroom is where you start and end each day. It should be a space that energizes you in the 
+          morning and relaxes you at night. Our bathroom renovations transform ordinary spaces into 
+          extraordinary sanctuaries that enhance your daily rituals and add significant value to your home.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Premium Materials</h3>
+          <p class="text-[color:var(--muted-foreground)]">Natural stone, custom tile, and luxury fixtures that stand the test of time.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Custom Design</h3>
+          <p class="text-[color:var(--muted-foreground)]">Tailored layouts that maximize space and reflect your personal style perfectly.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Expert Craftsmanship</h3>
+          <p class="text-[color:var(--muted-foreground)]">Master craftsmen with 15+ years experience in luxury renovations.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Guaranteed Results</h3>
+          <p class="text-[color:var(--muted-foreground)]">100% satisfaction guarantee with comprehensive warranty coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Service Cards -->
+  <section class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Comprehensive Bathroom Solutions
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          From complete transformations to targeted upgrades, we offer the full spectrum of bathroom renovation services.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Complete Renovations</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Full bathroom transformations with luxury fixtures, custom tilework, and premium finishes.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Shower Transformations</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Walk-in showers, rainfall systems, and custom glass enclosures for the ultimate bathing experience.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Vanity & Storage</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Custom vanities and intelligent storage solutions that maximize space and functionality.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Lighting & Electrical</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Ambient, task, and accent lighting with modern fixtures and smart controls.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$ - $$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Accessibility Features</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Grab bars, curbless showers, and aging-in-place modifications for safety and comfort.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$ - $$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Luxury Upgrades</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Heated floors, smart toilets, steam showers, and premium spa-like amenities.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Our Proven 5-Step Process
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
+        </p>
+      </div>
+      
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
+        
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Design Consultation</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We assess your space, discuss your vision, and create a detailed plan that balances aesthetics, functionality, and budget.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/bathroom/design-consultation.jpg" alt="Design consultation process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Material Selection</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Visit our showroom to select premium fixtures, tiles, and finishes. We guide you through options that fit your style and budget.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1 week</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/bathroom/material-selection.jpg" alt="Material selection process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Professional Installation</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Our skilled craftsmen execute the renovation with precision, maintaining clean work areas and respecting your home.</p>
+                <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-4 weeks</div>
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/bathroom/installation.jpg" alt="Professional installation" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section id="portfolio" class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Transformation Gallery
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          See how we've transformed ordinary bathrooms into extraordinary spaces that our clients love.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Lincoln Park Master Bath</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/bathroom/before-after-1.jpg" alt="Lincoln Park bathroom transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Transformed a cramped 1970s bathroom into a luxurious spa-like retreat with custom marble, heated floors, and a rainfall shower system.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 3 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Complete renovation</span>
+          </div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Lakeview Guest Bathroom</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/bathroom/before-after-2.jpg" alt="Lakeview bathroom transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Maximized space in a small guest bath with clever storage solutions, modern fixtures, and a stunning geometric tile feature wall.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 2 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Space optimization</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="/gallery" class="btn-secondary">
+          <span>View Complete Portfolio</span>
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>

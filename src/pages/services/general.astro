@@ -1,89 +1,246 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Hammer } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
 ---
 
-<BaseLayout title="General Remodeling | Our Services">
-  <section class="w-full py-16">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-10 text-center">
-        <div class="inline-block text-blue-500 mb-4">
-          <Hammer size={60} strokeWidth={1.5} />
+<BaseLayout title="Complete Home Remodeling | Chicago's Premier Remodeling Studio">
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="/pictures/general/whole-home-renovation.jpg" alt="Complete home remodeling showcase" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
+    </div>
+    
+    <div class="relative z-10 container-premium text-center">
+      <div class="hero-content max-w-4xl mx-auto">
+        <div class="inline-block text-[color:var(--accent)] mb-6">
+          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+          </svg>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">General Remodeling</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Whole-home updates, repairs, and custom projects—big or small.
+        <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
+          Transform Your Entire Home with 
+          <span class="text-[color:var(--accent)]">Complete Remodeling Solutions</span>
+        </h1>
+        <p class="text-xl text-[color:var(--muted-foreground)] mb-8 max-w-2xl mx-auto leading-relaxed">
+          From single rooms to whole-home renovations, we bring comprehensive expertise to projects of every scale, creating cohesive designs that enhance your lifestyle.
         </p>
-      </div>
-      
-      <div class="prose prose-lg max-w-none">
-        <p>
-          From minor repairs to whole-house renovations, our general remodeling services address all aspects of home improvement. We bring the same attention to detail and quality craftsmanship to projects of every size, ensuring your home functions beautifully and reflects your personal style.
-        </p>
-        
-        <h2>Our General Remodeling Services Include:</h2>
-        
-        <ul>
-          <li><strong>Whole-Home Renovations:</strong> Comprehensive updates to multiple rooms or entire houses</li>
-          <li><strong>Room Additions:</strong> Expand your living space with carefully integrated new construction</li>
-          <li><strong>Interior Reconfigurations:</strong> Improved floor plans that enhance flow and functionality</li>
-          <li><strong>Structural Repairs:</strong> Solutions for foundation issues, water damage, and other structural concerns</li>
-          <li><strong>Window & Door Replacement:</strong> Energy-efficient upgrades that improve comfort and aesthetics</li>
-          <li><strong>Flooring Installation:</strong> A wide range of options including hardwood, tile, luxury vinyl, and carpet</li>
-          <li><strong>Custom Built-ins:</strong> Tailor-made storage solutions that maximize space and add character</li>
-        </ul>
-        
-        <h2>Why Choose Professional Remodeling</h2>
-        
-        <p>
-          Working with a professional remodeling contractor offers significant advantages:
-        </p>
-        
-        <ul>
-          <li><strong>Design Expertise:</strong> We help you navigate design decisions and avoid costly mistakes</li>
-          <li><strong>Project Management:</strong> We coordinate all aspects of your project, from permits to final inspections</li>
-          <li><strong>Quality Craftsmanship:</strong> Our skilled tradespeople deliver superior results that last</li>
-          <li><strong>Code Compliance:</strong> We ensure all work meets current building codes and safety standards</li>
-          <li><strong>Warranty Protection:</strong> Our workmanship is backed by comprehensive warranties</li>
-        </ul>
-        
-        <h2>Our Remodeling Process</h2>
-        
-        <p>
-          We follow a systematic approach that ensures a smooth, successful project:
-        </p>
-        
-        <ol>
-          <li><strong>Initial Consultation:</strong> We discuss your goals, preferences, and budget constraints</li>
-          <li><strong>Detailed Planning:</strong> We develop comprehensive plans and specifications</li>
-          <li><strong>Accurate Estimation:</strong> We provide transparent pricing with no hidden costs</li>
-          <li><strong>Material Selection:</strong> We guide you through choosing the right materials for your project</li>
-          <li><strong>Professional Execution:</strong> Our team completes the work with attention to detail and minimal disruption</li>
-          <li><strong>Quality Assurance:</strong> We conduct thorough inspections throughout the project</li>
-          <li><strong>Final Walkthrough:</strong> We ensure your complete satisfaction before considering the project complete</li>
-        </ol>
-        
-        <h2>Common Remodeling Projects</h2>
-        
-        <p>
-          Some of our most popular services include:
-        </p>
-        
-        <ul>
-          <li><strong>Aging-in-Place Modifications:</strong> Accessibility improvements that allow homeowners to remain in their homes longer</li>
-          <li><strong>Energy-Efficiency Upgrades:</strong> Insulation, windows, doors, and systems that reduce utility costs</li>
-          <li><strong>Historic Home Renovations:</strong> Sensitive updates that preserve character while improving functionality</li>
-          <li><strong>Home Office Conversions:</strong> Dedicated workspaces designed for productivity and comfort</li>
-          <li><strong>Multi-Generational Living Solutions:</strong> Adaptations that accommodate extended family members</li>
-        </ul>
-        
-        <div class="mt-8 text-center">
-          
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button class="btn-primary group" data-estimate-button>
+            <span>Get Free Project Consultation</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+          <a href="#portfolio" class="btn-secondary group">
+            <span>View Project Gallery</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
         </div>
-
       </div>
     </div>
   </section>
+
+  <!-- Service Overview -->
+  <section class="py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
+    <div class="container-premium">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Your Vision, Our Comprehensive Expertise
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] leading-relaxed mb-12">
+          Whether you're planning a single room refresh or a complete home transformation, our general 
+          remodeling services bring together all the trades and expertise needed to execute your vision 
+          flawlessly. We handle every detail from design to final walkthrough.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Complete Design</h3>
+          <p class="text-[color:var(--muted-foreground)]">Full-service design from concept through construction documentation.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Project Management</h3>
+          <p class="text-[color:var(--muted-foreground)]">Coordinated scheduling and oversight of all trades and timelines.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Quality Assurance</h3>
+          <p class="text-[color:var(--muted-foreground)]">Rigorous quality control at every phase of construction.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Value Engineering</h3>
+          <p class="text-[color:var(--muted-foreground)]">Smart solutions that maximize impact within your budget.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Service Cards -->
+  <section class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Comprehensive Remodeling Services
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          From minor updates to major renovations, we have the expertise and resources to handle any project size or complexity.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Whole-Home Renovations</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete home transformations with coordinated design and construction across multiple rooms.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$$ - $$$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Room Additions</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Expand your living space with seamlessly integrated new construction and design.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$ - $$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Open Floor Plans</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Remove walls and reconfigure spaces to create modern, flowing layouts.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Structural Repairs</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Foundation work, beam reinforcement, and structural improvements for safety and stability.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Smart Home Integration</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Modern electrical systems, automation, and technology infrastructure installation.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Custom Millwork</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Built-in cabinetry, trim work, and architectural details throughout your home.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section id="portfolio" class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Complete Home Transformation Gallery
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          See how we've transformed entire homes with comprehensive renovations that enhance both form and function.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Bucktown Whole-Home Renovation</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/general/before-after-1.jpg" alt="Bucktown whole home transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Complete renovation of a 1920s home with open floor plan, modern kitchen, updated bathrooms, and restored original details.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 12 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Whole home renovation</span>
+          </div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Logan Square Addition & Remodel</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/general/before-after-2.jpg" alt="Logan Square addition transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Added a second story with master suite and office, plus first-floor kitchen and living room renovation.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 16 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Addition & renovation</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="/gallery" class="btn-secondary">
+          <span>View Complete Portfolio</span>
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>

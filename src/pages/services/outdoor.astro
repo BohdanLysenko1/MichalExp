@@ -1,74 +1,245 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { Trees } from 'lucide-react';
 import ContactCTA from '../../components/ContactCTA.tsx';
 ---
 
-<BaseLayout title="Outdoor Spaces | Our Services">
-  <section class="w-full py-16">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-10 text-center">
-        <div class="inline-block text-blue-500 mb-4">
-          <Trees size={60} strokeWidth={1.5} />
+<BaseLayout title="Premium Outdoor Living Spaces | Chicago's Premier Remodeling Studio">
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="/pictures/outdoor/deck-patio-showcase.jpg" alt="Premium outdoor living space showcase" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--primary)]/80 via-[color:var(--primary)]/60 to-[color:var(--accent)]/40 z-10"></div>
+    </div>
+    
+    <div class="relative z-10 container-premium text-center">
+      <div class="hero-content max-w-4xl mx-auto">
+        <div class="inline-block text-[color:var(--accent)] mb-6">
+          <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Outdoor Spaces</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Decks, patios, and landscaping to expand your living area outdoors.
+        <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
+          Extend Your Living with 
+          <span class="text-[color:var(--accent)]">Premium Outdoor Spaces</span>
+        </h1>
+        <p class="text-xl text-[color:var(--muted-foreground)] mb-8 max-w-2xl mx-auto leading-relaxed">
+          Create stunning outdoor living areas that seamlessly blend with nature while providing comfort, functionality, and year-round enjoyment for your family.
         </p>
-      </div>
-      
-      <div class="prose prose-lg max-w-none">
-        <p>
-          Extend your living space beyond your four walls with our outdoor living solutions. We design and build beautiful, functional outdoor areas that connect your home to nature and provide perfect spaces for relaxation, entertainment, and family gatherings.
-        </p>
-        
-        <h2>Our Outdoor Space Services Include:</h2>
-        
-        <ul>
-          <li><strong>Custom Deck Construction:</strong> Beautifully crafted decks in a variety of materials including wood, composite, and PVC</li>
-          <li><strong>Patio Design & Installation:</strong> Concrete, pavers, stone, and brick patios designed for beauty and durability</li>
-          <li><strong>Pergolas & Gazebos:</strong> Stylish shade structures that define outdoor rooms and add architectural interest</li>
-          <li><strong>Outdoor Kitchens:</strong> Fully equipped cooking spaces for alfresco dining and entertaining</li>
-          <li><strong>Fire Features:</strong> Fire pits and fireplaces that extend the outdoor season and create a focal point</li>
-          <li><strong>Landscape Design:</strong> Thoughtful plantings and hardscapes that enhance your property's beauty and function</li>
-          <li><strong>Outdoor Lighting:</strong> Strategic illumination for safety, security, and ambiance</li>
-        </ul>
-        
-        <h2>Benefits of Investing in Outdoor Living Spaces</h2>
-        
-        <p>
-          Well-designed outdoor living areas offer numerous advantages:
-        </p>
-        
-        <ul>
-          <li><strong>Expanded Living Space:</strong> Gain functional square footage without the cost of a traditional addition</li>
-          <li><strong>Increased Home Value:</strong> Quality outdoor improvements offer excellent return on investment</li>
-          <li><strong>Enhanced Lifestyle:</strong> Create spaces for recreation, relaxation, and entertainment</li>
-          <li><strong>Connection to Nature:</strong> Enjoy the health benefits of spending time outdoors</li>
-          <li><strong>Energy Efficiency:</strong> Strategic landscaping can reduce heating and cooling costs</li>
-        </ul>
-        
-        <h2>Our Outdoor Project Process</h2>
-        
-        <p>
-          Creating exceptional outdoor spaces requires careful planning and expert execution:
-        </p>
-        
-        <ol>
-          <li><strong>Site Analysis:</strong> We evaluate your property's characteristics, including topography, drainage, and views</li>
-          <li><strong>Design Consultation:</strong> We discuss your goals, preferences, and budget to develop a vision</li>
-          <li><strong>Custom Design:</strong> We create detailed plans that integrate your outdoor space with your home and landscape</li>
-          <li><strong>Material Selection:</strong> We help you choose materials that balance aesthetics, durability, and maintenance requirements</li>
-          <li><strong>Professional Construction:</strong> Our skilled craftsmen build your outdoor space with attention to detail</li>
-          <li><strong>Final Walkthrough:</strong> We ensure every aspect of your project meets our standards and your expectations</li>
-        </ol>
-        
-        <div class="mt-8 text-center">
-          
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button class="btn-primary group" data-estimate-button>
+            <span>Get Free Outdoor Design</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+          <a href="#portfolio" class="btn-secondary group">
+            <span>View Outdoor Gallery</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Service Overview -->
+  <section class="py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
+    <div class="container-premium">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Transform Your Outdoor Experience
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] leading-relaxed mb-12">
+          Your outdoor space is an extension of your home and lifestyle. We design and build premium outdoor 
+          living areas that provide the perfect setting for relaxation, entertainment, and connection with nature, 
+          all while adding significant value to your property.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Custom Design</h3>
+          <p class="text-[color:var(--muted-foreground)]">Tailored outdoor spaces that complement your home's architecture.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Weather Resistant</h3>
+          <p class="text-[color:var(--muted-foreground)]">Premium materials designed to withstand Chicago's climate.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Smart Features</h3>
+          <p class="text-[color:var(--muted-foreground)]">Integrated lighting, sound, and climate control systems.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Value Addition</h3>
+          <p class="text-[color:var(--muted-foreground)]">Outdoor improvements that significantly increase property value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Service Cards -->
+  <section class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Premium Outdoor Living Solutions
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          From intimate patios to expansive outdoor kitchens, we create outdoor spaces that extend your living area and enhance your lifestyle.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Custom Decks</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Multi-level composite and hardwood decks with integrated lighting and built-in seating.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Luxury Patios</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Stone, brick, and paver patios with fire features and water elements.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Outdoor Kitchens</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete cooking stations with grills, refrigeration, and weather-resistant cabinetry.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$$ - $$$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Pergolas & Gazebos</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Architectural shade structures with retractable canopies and integrated lighting.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Fire Features</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Custom fire pits, fireplaces, and water features for year-round outdoor enjoyment.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$$ - $$$$$</div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Landscape Integration</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional landscaping and hardscaping to complete your outdoor vision.</p>
+          <div class="text-sm text-[color:var(--accent)] font-semibold text-center">$$ - $$$$</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Gallery -->
+  <section id="portfolio" class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Outdoor Transformation Gallery
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          See how we've transformed ordinary backyards into extraordinary outdoor living spaces that serve as natural extensions of the home.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 mb-16">
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Multi-Level Deck with Fire Feature</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/outdoor/deck-transformation.jpg" alt="Multi-level deck transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Transformed a simple backyard into a stunning two-level composite deck with built-in fire pit and integrated lighting.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 6 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Custom deck & fire feature</span>
+          </div>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl">
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-6">Complete Outdoor Kitchen & Patio</h3>
+          <div class="relative mb-6">
+            <img src="/pictures/outdoor/kitchen-patio.jpg" alt="Outdoor kitchen and patio transformation" class="w-full h-64 object-cover rounded-xl" />
+            <div class="absolute bottom-4 left-4 bg-black/80 text-white px-3 py-1 rounded-full text-sm">Before/After Slider</div>
+          </div>
+          <p class="text-[color:var(--muted-foreground)] mb-4">
+            Created a resort-style outdoor kitchen with stone patio, pergola, and water feature for ultimate entertaining.
+          </p>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="text-[color:var(--accent)] font-semibold">Project Duration: 10 weeks</span>
+            <span class="text-[color:var(--muted-foreground)]">•</span>
+            <span class="text-[color:var(--muted-foreground)]">Complete outdoor living</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <a href="/gallery" class="btn-secondary">
+          <span>View Complete Portfolio</span>
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- React modal for consultation -->
   <ContactCTA client:load />
 </BaseLayout>
