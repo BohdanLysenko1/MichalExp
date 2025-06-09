@@ -1,37 +1,74 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
-import { Paintbrush } from 'lucide-react';
+import { Paintbrush, Palette, ShieldCheck, Settings, DollarSign, Home, Layers, Droplets, Brush, PaintBucket, Sparkles } from 'lucide-react';
 ---
 
 <BaseLayout title="Premium Painting & Finishes | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[color:var(--primary)] via-[color:var(--primary)]/90 to-[color:var(--accent)]/80">
-    <div class="relative z-10 container-premium text-center">
-      <div class="hero-content max-w-4xl mx-auto">
-        <div class="inline-block text-[color:var(--accent)] mb-6">
-          <Paintbrush size={80} strokeWidth={1.5} />
-        </div>
-        <h1 class="text-display-xl font-display font-bold mb-6 text-[color:var(--primary)] leading-tight">
-          Elevate Every Surface with 
-          <span class="text-[color:var(--accent)]">Premium Painting & Finishes</span>
+  <section class="relative h-screen w-full overflow-hidden">
+    <!-- Background image with parallax -->
+    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/painting/paintingHero.png');"></div>
+    <!-- Dark-to-light overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
+    
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <div class="max-w-[1100px] px-6 py-20 mx-auto text-center">
+        <!-- Headline with gold glow -->
+        <h1 class="opacity-0 text-4xl md:text-6xl text-white mb-4" style="font-family: 'Playfair Display', serif; text-shadow: 0 0 8px #D6B56066; animation: fadeInUp 0.6s ease-out 0.2s forwards;">
+          Elevate Every Surface
         </h1>
-        <p class="text-xl text-[color:var(--muted-foreground)] mb-8 max-w-2xl mx-auto leading-relaxed">
-          Transform your space with expert color consultation, premium finishes, and meticulous craftsmanship that protects and beautifies every surface in your home.
+        <!-- Subheadline with Inter font and opacity -->
+        <p class="opacity-0 mt-4 text-xl md:text-2xl text-[#F2F2F2] font-medium" style="font-family: 'Inter', sans-serif; opacity: 0.85; letter-spacing: 0.02em; animation: fadeInRight 0.6s ease-out 0.4s forwards;">
+          Premium Finishes. Expert Craftsmanship.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button class="btn-primary group" data-estimate-button>
+        
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <!-- Primary Button with shimmer -->
+          <button class="group rounded-full px-8 py-4 text-lg md:text-xl font-bold uppercase text-[#0B254B] opacity-0 transition-all duration-300" 
+                  data-estimate-button 
+                  style="background: linear-gradient(to right, #D6B560, #F6E4A4, #D6B560); background-size: 200% 100%; animation: fadeInUp 0.6s ease-out 0.6s forwards;"
+                  onmouseover="this.style.backgroundPosition='100% 0'; this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.3)'"
+                  onmouseout="this.style.backgroundPosition='0% 0'; this.style.transform='scale(1)'; this.style.boxShadow='none'">
             <span>Get Free Color Consultation</span>
-            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            <svg class="w-5 h-5 ml-2 inline transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
           </button>
-          <a href="#portfolio" class="btn-secondary group">
-            <span>View Paint Gallery</span>
-            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          
+          <!-- Secondary Ghost Button -->
+          <a href="#five-step-process" class="group border-2 border-white text-white rounded-full px-8 py-4 text-lg md:text-xl flex items-center justify-center transition-all duration-500 opacity-0 hover:border-transparent hover:text-[#0B254B]" 
+             style="animation: fadeInUp 0.6s ease-out 0.8s forwards; background: transparent;"
+             onmouseover="this.style.background='linear-gradient(to right, #D6B560, #F6E4A4)'; this.style.borderColor='transparent'"
+             onmouseout="this.style.background='transparent'; this.style.borderColor='white'">
+            <span>Our Five Step Process</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="animation: bob 2s ease-in-out infinite;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </a>
+        </div>
+        
+        <!-- Trust Row -->
+        <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center text-white/80 text-sm opacity-0" style="animation: fadeInUp 0.6s ease-out 1s forwards;">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#D6B560]" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+            </svg>
+            <span>25+ Years Experience</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#D6B560]" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 9c0-2.761 3.134-5 5-5s5 2.239 5 5c0 2.405-2.362 4.725-4.043 6.002a1 1 0 01-1.914 0C7.362 13.725 5 11.405 5 9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Licensed & Insured</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#D6B560]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <span>Locally Owned & Operated</span>
+          </div>
         </div>
       </div>
     </div>
@@ -54,9 +91,7 @@ import { Paintbrush } from 'lucide-react';
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"/>
-            </svg>
+            <Palette color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Color Expertise</h3>
           <p class="text-[color:var(--muted-foreground)]">Professional color consultation to create perfect palettes.</p>
@@ -64,9 +99,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <ShieldCheck color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Premium Materials</h3>
           <p class="text-[color:var(--muted-foreground)]">Only the finest paints and finishes for lasting beauty.</p>
@@ -74,9 +107,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
-            </svg>
+            <Settings color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Master Craftsmanship</h3>
           <p class="text-[color:var(--muted-foreground)]">Precise preparation and application for flawless results.</p>
@@ -84,8 +115,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
-            <svg class="w-8 h-8 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            <DollarSign color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Lasting Value</h3>
           <p class="text-[color:var(--muted-foreground)]">Protective finishes that maintain beauty for years to come.</p>
@@ -109,9 +139,7 @@ import { Paintbrush } from 'lucide-react';
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-            </svg>
+            <Home color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Interior Painting</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional interior painting with premium paints and meticulous preparation for lasting results.</p>
@@ -119,9 +147,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <Droplets color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Exterior Painting</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Weather-resistant exterior finishes that protect and beautify your home's exterior surfaces.</p>
@@ -129,9 +155,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 3H5a2 2 0 00-2 2v12a4 4 0 004 4h2a2 2 0 002-2V5a2 2 0 00-2-2z"/>
-            </svg>
+            <PaintBucket color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Cabinet Refinishing</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Transform kitchen and bathroom cabinets with professional refinishing and modern colors.</p>
@@ -139,9 +163,7 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-            </svg>
+            <Brush color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Specialty Finishes</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Decorative techniques including faux finishes, texture work, and artistic wall treatments.</p>
@@ -149,22 +171,18 @@ import { Paintbrush } from 'lucide-react';
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+            <Layers color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Wallpaper & Coverings</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Expert installation of wallpaper, fabric coverings, and decorative wall treatments.</p>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Surface Restoration</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Repair and restoration of damaged surfaces before applying premium finishes.</p>
         </div>
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-[color:var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <Sparkles color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
-          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Surface Restoration</h3>
-          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Repair and restoration of damaged surfaces before applying premium finishes.</p>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Wallpaper & Coverings</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Expert installation of wallpaper, fabric coverings, and decorative wall treatments.</p>
         </div>
       </div>
     </div>
@@ -178,7 +196,7 @@ import { Paintbrush } from 'lucide-react';
           Our Proven 5-Step Process
         </h2>
         <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
-          We've perfected our renovation process over 15+ years to minimize disruption while maximizing results.
+          We've perfected our renovation process over 25+ years to minimize disruption while maximizing results.
         </p>
       </div>
       
