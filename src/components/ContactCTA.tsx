@@ -54,7 +54,7 @@ export default function ContactCTA() {
 
   return (
     <section id="contact" className="w-full py-16 bg-[color:var(--secondary)] flex flex-col items-center justify-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-black">
+      <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-6 text-[color:var(--primary)] leading-tight">
         Ready to transform your space?
       </h2>
       <div className="btn-conteiner">

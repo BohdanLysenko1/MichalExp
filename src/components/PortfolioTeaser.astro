@@ -4,22 +4,55 @@ import fs from 'fs/promises';
 import path from 'path';
 import PortfolioTeaser from './PortfolioTeaser.tsx';
 
-// Build list of categories and their images
+// Function to convert filesystem directory names to proper display names
+const getCategoryDisplayName = (dirName) => {
+  const nameMap = {
+    'bathroom': 'Bathroom',
+    'kitchen': 'Kitchen',
+    'stairs': 'Staircases',
+    'other stuff': 'Other Stuff'
+  };
+  
+  // Use the mapped name or capitalize if not found
+  return nameMap[dirName.toLowerCase()] || dirName.replace(/\b\w/g, l => l.toUpperCase());
+};
+
+// Build list of categories and their images - ONLY using the 4 specified folders
 const picsDir = path.join(process.cwd(), 'public', 'pictures');
-const dirNames = await fs.readdir(picsDir);
+// Only include these 4 specific folders as seen in the UI
+const allowedFolders = ['kitchen', 'other stuff', 'stairs', 'bathroom'];
 let categories = [];
-for (const dir of dirNames) {
+// Only process the allowed folders
+for (const dir of allowedFolders) {
   const dirPath = path.join(picsDir, dir);
-  const stat = await fs.stat(dirPath);
-  if (!stat.isDirectory()) continue;
-  const files = await fs.readdir(dirPath);
-  const images = files
-    .filter(name => /\.(jpe?g|png)$/i.test(name))
-    .map(name => `/pictures/${dir}/${name}`);
-  if (images.length) categories.push({ name: dir, images });
+  
+  try {
+    const stat = await fs.stat(dirPath);
+    if (!stat.isDirectory()) continue;
+    
+    const files = await fs.readdir(dirPath);
+    const images = files
+      .filter(name => /\.(jpe?g|png)$/i.test(name))
+      .map(name => `/pictures/${dir}/${name}`);
+      
+    if (images.length) categories.push({ 
+      name: getCategoryDisplayName(dir),
+      originalDir: dir,
+      images 
+    });
+  } catch (error) {
+    console.warn(`Could not process folder ${dir}: ${error.message}`);
+    // Continue with other folders if one isn't found
+  }
 }
-// Remove any category named 'logo' (case-insensitive)
-categories = categories.filter(cat => cat.name.toLowerCase() !== 'logo');
+
+// Sort categories in the same order as the UI shows them
+categories = categories.sort((a, b) => {
+  return allowedFolders.indexOf(a.originalDir) - allowedFolders.indexOf(b.originalDir);
+});
+
+// Store the final categories
+const uniqueCategories = categories;
 
 ---
-<PortfolioTeaser categories={categories} client:load />
+<PortfolioTeaser categories={uniqueCategories} client:load />

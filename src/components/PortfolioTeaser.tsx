@@ -70,7 +70,7 @@ const CategoryButton = memo(({
   return (
     <Disclosure.Button
       className={
-        `flex w-full justify-between items-center text-xl md:text-2xl font-semibold text-[color:var(--primary)] capitalize py-5 px-6 transition-all duration-200 focus:outline-none bg-white/80 hover:bg-white rounded-xl shadow-md hover:shadow-lg ${isOpen ? 'border-b-2 border-[color:var(--accent)]' : ''}`
+        `flex w-full justify-between items-center text-xl md:text-2xl font-semibold font-display text-[color:var(--primary)] py-5 px-6 transition-all duration-200 focus:outline-none bg-white/80 hover:bg-white rounded-xl shadow-md hover:shadow-lg ${isOpen ? 'border-b-2 border-[color:var(--accent)]' : ''}`
       }
       onClick={onClick}
     >
@@ -82,7 +82,7 @@ const CategoryButton = memo(({
             strokeWidth={1.5}
           />
         </div>
-        <span className="text-black font-bold">{name}</span>
+        <span className="text-[color:var(--primary)] font-bold font-display">{name}</span>
       </span>
       <div className="w-8 h-8 rounded-full bg-[color:var(--accent)]/10 flex items-center justify-center">
         <ChevronDown className={`h-5 w-5 text-[color:var(--accent)] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
@@ -145,7 +145,7 @@ export default function PortfolioTeaser({ categories }: Props) {
   return (
     <section id="portfolio" className="w-full py-16 bg-[color:var(--secondary)]">
       <div className="container mx-auto px-4 min-h-[300px]">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Our Work</h2>
+        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-10 text-[color:var(--primary)] leading-tight">Our Work</h2>
         <div className="w-full max-w-3xl mx-auto">
           {categories.map(({ name, images }) => {
             const isOpen = openSection === name;
