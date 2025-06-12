@@ -2,7 +2,7 @@
 
 ---
 
-<section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
+<section class="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
   <!-- Image carousel with overlay -->
   <div class="absolute inset-0 z-0 carousel-container">
     <!-- Images -->
@@ -47,10 +47,10 @@
     </button>
     
     <!-- Carousel indicators -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-wrap justify-center gap-2 max-w-xs">
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-wrap justify-center gap-2 w-full max-w-xs px-2">
       {Array(9).fill(0).map((_, i) => (
         <button 
-          class={`w-2.5 h-2.5 rounded-full ${i === 0 ? 'bg-white active' : 'bg-white/50 hover:bg-white'} carousel-indicator`} 
+          class={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${i === 0 ? 'bg-white active' : 'bg-white/50 hover:bg-white'} carousel-indicator`} 
           data-index={i} 
           aria-label={`Go to slide ${i+1}`}
         ></button>

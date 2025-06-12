@@ -89,13 +89,22 @@ function getNavPath(anchor) {
       <!-- Working Hours -->      
       <div>
         <h3 class="text-xl font-semibold font-display mb-4 text-[color:var(--accent)]">Working Hours</h3>
-        <div class="grid grid-cols-2 gap-2 text-white">
-          <div>Monday - Friday:</div>
-          <div>8:00 AM - 6:00 PM</div>
-          <div>Saturday:</div>
-          <div>9:00 AM - 4:00 PM</div>
-          <div>Sunday:</div>
-          <div>Closed</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-white">
+          <div class="flex justify-between sm:block">
+            <span>Monday - Friday:</span>
+            <span class="sm:hidden">8:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hidden sm:block">8:00 AM - 6:00 PM</div>
+          <div class="flex justify-between sm:block">
+            <span>Saturday:</span>
+            <span class="sm:hidden">9:00 AM - 4:00 PM</span>
+          </div>
+          <div class="hidden sm:block">9:00 AM - 4:00 PM</div>
+          <div class="flex justify-between sm:block">
+            <span>Sunday:</span>
+            <span class="sm:hidden">Closed</span>
+          </div>
+          <div class="hidden sm:block">Closed</div>
         </div>
       </div>
       
