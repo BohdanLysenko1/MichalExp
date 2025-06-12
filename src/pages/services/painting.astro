@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
-import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Droplets, Brush, PaintBucket, Sparkles } from 'lucide-react';
+import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Droplets, Brush, PaintRoller, PaintBucket, Sparkles } from 'lucide-react';
 ---
 
 <BaseLayout title="Premium Painting & Finishes | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
   <section class="relative h-screen w-full overflow-hidden">
     <!-- Background image with parallax -->
-    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/painting/paintingHero.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/servicesPainting/servicesPaintingHero.png');"></div>
     <!-- Dark-to-light overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
     
@@ -142,7 +142,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Home color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+            <Paintbrush color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Interior Painting</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional interior painting with premium paints and meticulous preparation for lasting results.</p>
@@ -150,7 +150,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Droplets color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+            <PaintBucket color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Exterior Painting</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Weather-resistant exterior finishes that protect and beautify your home's exterior surfaces.</p>
@@ -158,7 +158,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <PaintBucket color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+            <PaintRoller color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Cabinet Refinishing</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Transform kitchen and bathroom cabinets with professional refinishing and modern colors.</p>
@@ -219,7 +219,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/painting/color-consultation.jpg" alt="Color consultation and surface analysis" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesPainting/servicePaintingStep1.png" alt="Color consultation and surface analysis" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -234,7 +234,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/painting/surface-prep.jpg" alt="Surface preparation and priming" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesPainting/servicesPaintingStep2.png" alt="Surface preparation and priming" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -249,7 +249,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/painting/paint-application.jpg" alt="Premium paint application" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesPainting/servicesPaintingStep3.png" alt="Premium paint application" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -264,7 +264,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/painting/detail-work.jpg" alt="Detail work and accent features" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesPainting/servicesPaintingStep4.png" alt="Detail work and accent features" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -279,7 +279,7 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/painting/final-inspection.jpg" alt="Final inspection and touch-ups" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesPainting/servicesPaintingStep5.png" alt="Final inspection and touch-ups" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
         </div>
