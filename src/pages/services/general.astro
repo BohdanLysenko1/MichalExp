@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
-import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Building2, Footprints, Brush, Wrench } from 'lucide-react';
+import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Building2, Footprints, Brush } from 'lucide-react';
 ---
 
 <BaseLayout title="General Contracting & Home Remodeling | Chicago's Premier Renovation Studio">
   <!-- Hero Section -->
   <section class="relative h-screen w-full overflow-hidden">
     <!-- Background image with parallax -->
-    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/general/generalHero.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/servicesGeneral/servicesGeneralHero.png');"></div>
     <!-- Dark-to-light overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
     
@@ -173,7 +173,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Wrench color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+            <Ruler color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Open Floor Plans</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Remove walls and reconfigure spaces to create modern, flowing layouts.</p>
@@ -197,7 +197,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
         
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <Ruler color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+            <Brush color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
           </div>
           <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Custom Millwork</h3>
           <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Built-in cabinetry, trim work, and architectural details throughout your home.</p>
@@ -234,7 +234,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/general/project-assessment.jpg" alt="Comprehensive project assessment" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesGeneral/servicesGeneralStep1.png" alt="Comprehensive project assessment" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -249,7 +249,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/general/design-permits.jpg" alt="Design development and permits" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesGeneral/servicesGeneralStep2.png" alt="Design development and permits" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -264,7 +264,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/general/structural-systems.jpg" alt="Structural and systems work" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesGeneral/servicesGeneralStep3.png" alt="Structural and systems work" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -279,7 +279,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/general/interior-buildout.jpg" alt="Interior build-out and finishes" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesGeneral/servicesGeneralStep4.png" alt="Interior build-out & finishes" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
           
@@ -294,7 +294,7 @@ import { Home, Building, MapPin, CheckCircle, DollarSign, Hammer, Ruler, Cpu, Bu
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/general/final-inspections.jpg" alt="Final inspections and project completion" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesGeneral/servicesGeneralStep5.png" alt="Final inspections & project completion" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
             </div>
           </div>
         </div>
