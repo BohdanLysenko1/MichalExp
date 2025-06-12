@@ -65,27 +65,25 @@ const CategoryButton = memo(({
   if (/bathroom/i.test(name)) Icon = ShowerHead;
   else if (/kitchen/i.test(name)) Icon = ChefHat;
   else if (/stairs?/i.test(name)) Icon = Landmark;
-  else if (/other/i.test(name)) Icon = Sofa;
+  else if (/custom projects/i.test(name)) Icon = Sofa;
 
   return (
     <Disclosure.Button
-      className={
-        `flex w-full justify-between items-center text-xl md:text-2xl font-semibold font-display text-[color:var(--primary)] py-5 px-6 transition-all duration-200 focus:outline-none bg-white/80 hover:bg-white rounded-xl shadow-md hover:shadow-lg ${isOpen ? 'border-b-2 border-[color:var(--accent)]' : ''}`
-      }
+      className={`flex w-full justify-between items-center text-xl md:text-2xl font-semibold font-display py-5 px-6 transition-all duration-200 focus:outline-none bg-white/80 hover:bg-white rounded-xl shadow-md hover:shadow-lg ${isOpen ? 'text-[#D4AF37] border-b-2 border-[#D4AF37]' : 'text-[#0F2A44] hover:text-[#D4AF37]'}`}
       onClick={onClick}
     >
       <span className="flex items-center gap-4">
-        <div className="flex items-center justify-center w-14 h-14 rounded-lg shadow bg-[color:var(--accent)]/10 border border-[color:var(--accent)]/20 p-3">
+        <div className={`flex items-center justify-center w-14 h-14 rounded-lg shadow p-3 ${isOpen ? 'bg-[#D4AF37]/20 border border-[#D4AF37]' : 'bg-[#0F2A44]/10 border border-[#0F2A44]/20 hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/20'}`}>
           <Icon
-            className="w-full h-full text-[color:var(--accent)]"
+            className={`w-full h-full ${isOpen ? 'text-[#D4AF37]' : 'text-[#0F2A44] group-hover:text-[#D4AF37]'}`}
             aria-hidden="true"
             strokeWidth={1.5}
           />
         </div>
-        <span className="text-[color:var(--primary)] font-bold font-display">{name}</span>
+        <span className={`font-bold font-display ${isOpen ? 'text-[#D4AF37]' : 'text-[#0F2A44]'}`}>{name}</span>
       </span>
-      <div className="w-8 h-8 rounded-full bg-[color:var(--accent)]/10 flex items-center justify-center">
-        <ChevronDown className={`h-5 w-5 text-[color:var(--accent)] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+      <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isOpen ? 'bg-[#D4AF37]/20' : 'bg-[#0F2A44]/10 group-hover:bg-[#D4AF37]/10'}`}>
+        <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'text-[#D4AF37] rotate-180' : 'text-[#0F2A44] group-hover:text-[#D4AF37]'}`} />
       </div>
     </Disclosure.Button>
   );
@@ -145,7 +143,12 @@ export default function PortfolioTeaser({ categories }: Props) {
   return (
     <section id="portfolio" className="w-full py-16 bg-[color:var(--secondary)]">
       <div className="container mx-auto px-4 min-h-[300px]">
-        <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-10 text-[color:var(--primary)] leading-tight">Our Work</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold font-display text-[#0F2A44] leading-tight relative inline-block">
+            Our Work
+            <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#D4AF37]"></span>
+          </h2>
+        </div>
         <div className="w-full max-w-3xl mx-auto">
           {categories.map(({ name, images }) => {
             const isOpen = openSection === name;

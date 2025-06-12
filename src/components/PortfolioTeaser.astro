@@ -10,7 +10,7 @@ const getCategoryDisplayName = (dirName) => {
     'bathroom': 'Bathroom',
     'kitchen': 'Kitchen',
     'stairs': 'Staircases',
-    'other stuff': 'Other Stuff'
+    'other stuff': 'Custom Projects'
   };
   
   // Use the mapped name or capitalize if not found
@@ -20,7 +20,7 @@ const getCategoryDisplayName = (dirName) => {
 // Build list of categories and their images - ONLY using the 4 specified folders
 const picsDir = path.join(process.cwd(), 'public', 'pictures');
 // Only include these 4 specific folders as seen in the UI
-const allowedFolders = ['kitchen', 'other stuff', 'stairs', 'bathroom'];
+const allowedFolders = ['kitchen', 'bathroom', 'stairs', 'other stuff'];
 let categories = [];
 // Only process the allowed folders
 for (const dir of allowedFolders) {
