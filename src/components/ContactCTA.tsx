@@ -92,7 +92,7 @@ export default function ContactCTA() {
               leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Book Your Free Consultation</h3>
+                <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)] text-center">Book Your Free Consultation</h3>
                 <p className="mb-6 text-gray-600 text-center">Fill out the form below and our team will get in touch to discuss your project.</p>
                 <form className="w-full flex flex-col gap-4" onSubmit={step === 1 ? handleNext : handleSubmit}>
                   {step === 1 && (
