@@ -1,3 +1,17 @@
+---
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/" || currentPath === "";
+
+// Function to get the correct path for navigation
+function getNavPath(anchor) {
+  if (isHomePage) {
+    return anchor; // Just the anchor on homepage
+  } else {
+    return `/${anchor}`; // Return to homepage with anchor
+  }
+}
+---
+
 <nav class="w-full h-20 flex items-center justify-between relative">
   <!-- Logo Section with Enhanced Styling -->
   <a href="/" class="flex items-center gap-4 p-2 group">
@@ -24,7 +38,7 @@
     <ul class="flex items-center gap-2">
       <li>
         <a 
-          href="#" 
+          href="/" 
           class="nav-link px-5 py-3 rounded-full text-[color:var(--foreground)] font-medium hover:text-[color:var(--primary)] hover:bg-[color:var(--secondary)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] relative group"
         >
           Home
@@ -33,7 +47,7 @@
       </li>
       <li>
         <a 
-          href="#services" 
+          href={getNavPath("#services")} 
           class="nav-link px-5 py-3 rounded-full text-[color:var(--foreground)] font-medium hover:text-[color:var(--primary)] hover:bg-[color:var(--secondary)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] relative group"
         >
           Services
@@ -42,7 +56,7 @@
       </li>
       <li>
         <a 
-          href="#portfolio" 
+          href={getNavPath("#portfolio")} 
           class="nav-link px-5 py-3 rounded-full text-[color:var(--foreground)] font-medium hover:text-[color:var(--primary)] hover:bg-[color:var(--secondary)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] relative group"
         >
           Portfolio
@@ -51,7 +65,7 @@
       </li>
       <li>
         <a 
-          href="#testimonials" 
+          href={getNavPath("#testimonials")} 
           class="nav-link px-5 py-3 rounded-full text-[color:var(--foreground)] font-medium hover:text-[color:var(--primary)] hover:bg-[color:var(--secondary)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] relative group"
         >
           Reviews
@@ -60,7 +74,7 @@
       </li>
       <li>
         <a 
-          href="#faq" 
+          href={getNavPath("#faq")} 
           class="nav-link px-5 py-3 rounded-full text-[color:var(--foreground)] font-medium hover:text-[color:var(--primary)] hover:bg-[color:var(--secondary)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] relative group"
         >
           FAQ
@@ -72,7 +86,7 @@
     <!-- Premium CTA Button -->
     <div class="ml-6 pl-6 border-l border-[color:var(--border)]">
       <a 
-        href="#contact" 
+        href={getNavPath("#contact")} 
         class="btn-primary inline-flex items-center gap-2 group"
       >
         <span>Get Free Estimate</span>
@@ -120,25 +134,25 @@
 
         <!-- Mobile Menu Links -->
         <nav class="space-y-2">
-          <a href="#" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
+          <a href="/" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
             Home
           </a>
-          <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
+          <a href={getNavPath("#services")} class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
             Services
           </a>
-          <a href="#portfolio" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
+          <a href={getNavPath("#portfolio")} class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
             Portfolio
           </a>
-          <a href="#testimonials" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
+          <a href={getNavPath("#testimonials")} class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
             Reviews
           </a>
-          <a href="#faq" class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
+          <a href={getNavPath("#faq")} class="mobile-nav-link block px-4 py-3 rounded-lg text-[color:var(--foreground)] font-medium hover:bg-[color:var(--secondary)] hover:text-[color:var(--primary)] transition-all duration-300">
             FAQ
           </a>
           
           <!-- Mobile CTA -->
           <div class="pt-6 mt-6 border-t border-[color:var(--border)]">
-            <a href="#contact" class="btn-primary w-full justify-center">
+            <a href={getNavPath("#contact")} class="btn-primary w-full justify-center">
               Get Free Estimate
             </a>
           </div>

@@ -1,5 +1,16 @@
 ---
 // SimpleFooter.astro: Footer with logo, nav, contact, and social links
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/" || currentPath === "";
+
+// Function to get the correct path for navigation
+function getNavPath(anchor) {
+  if (isHomePage) {
+    return anchor; // Just the anchor on homepage
+  } else {
+    return `/${anchor}`; // Return to homepage with anchor
+  }
+}
 ---
 <footer class="bg-[color:var(--primary)] text-white rounded-t-3xl py-16 mt-16 shadow-2xl">
   <div class="container mx-auto px-4">
@@ -21,12 +32,12 @@
       <div>
         <h3 class="text-xl font-semibold font-display mb-4 text-[color:var(--accent)]">Navigation</h3>
         <ul class="space-y-3">
-          <li><a href="#" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Home</a></li>
-          <li><a href="#services" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Services</a></li>
-          <li><a href="#portfolio" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Portfolio</a></li>
-          <li><a href="#testimonials" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Testimonials</a></li>
-          <li><a href="#faq" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">FAQ</a></li>
-          <li><a href="#contact" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Contact</a></li>
+          <li><a href="/" class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Home</a></li>
+          <li><a href={getNavPath("#services")} class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Services</a></li>
+          <li><a href={getNavPath("#portfolio")} class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Portfolio</a></li>
+          <li><a href={getNavPath("#testimonials")} class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Testimonials</a></li>
+          <li><a href={getNavPath("#faq")} class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">FAQ</a></li>
+          <li><a href={getNavPath("#contact")} class="text-white hover:text-[color:var(--accent)] transition-colors flex items-center gap-2">Contact</a></li>
         </ul>
       </div>
 

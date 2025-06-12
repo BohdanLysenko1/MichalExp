@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import SimpleFooter from '../../components/SimpleFooter.astro';
 import pkg from 'lucide-react';
 const { Bath, CheckCircle, LayoutGrid, Award, Droplet, PanelTop, Zap, Droplets, Hammer, Palette, ShowerHead, Package, Accessibility, Crown } = pkg;
 ---
@@ -292,6 +293,9 @@ const { Bath, CheckCircle, LayoutGrid, Award, Droplet, PanelTop, Zap, Droplets, 
 
   <!-- React modal for consultation -->
   <ContactCTA client:load />
+
+  <!-- Footer -->
+  <SimpleFooter />
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

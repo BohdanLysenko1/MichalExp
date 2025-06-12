@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import SimpleFooter from '../../components/SimpleFooter.astro';
 import pkg from 'lucide-react';
 const { Trees, Pencil, ShieldCheck, Cpu, DollarSign, Landmark, Tent, UtensilsCrossed, LayoutGrid, Diamond } = pkg;
 ---
@@ -292,16 +293,19 @@ const { Trees, Pencil, ShieldCheck, Cpu, DollarSign, Landmark, Tent, UtensilsCro
 
   <!-- React modal for consultation -->
   <ContactCTA client:load />
-</BaseLayout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
-    estimateButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+  <!-- Footer -->
+  <SimpleFooter />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+      estimateButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('openEstimateModal'));
+        });
       });
     });
-  });
-</script>
+  </script>
+</BaseLayout>

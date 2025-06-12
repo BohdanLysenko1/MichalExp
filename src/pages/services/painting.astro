@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.tsx';
+import SimpleFooter from '../../components/SimpleFooter.astro';
 import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Droplets, Brush, PaintRoller, PaintBucket, Sparkles } from 'lucide-react';
 ---
 
@@ -289,16 +290,19 @@ import { Paintbrush, Palette, ShieldCheck, Star, DollarSign, Home, Layers, Dropl
 
   <!-- React modal for consultation -->
   <ContactCTA client:load />
-</BaseLayout>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
-    estimateButtons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+  <!-- Footer -->
+  <SimpleFooter />
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+      estimateButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.dispatchEvent(new CustomEvent('openEstimateModal'));
+        });
       });
     });
-  });
-</script>
+  </script>
+</BaseLayout>
