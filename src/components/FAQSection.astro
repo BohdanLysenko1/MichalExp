@@ -1,0 +1,44 @@
+---
+// FAQSection.astro: FAQ accordion component that passes data to the React implementation
+import FAQSection from './FAQSection.tsx';
+
+// Simple FAQ format for the homepage
+const faqs = [
+  {
+    q: "How long does a typical remodel take?",
+    a: "Project timelines vary by size and complexity. Most kitchen or bathroom remodels take 2–6 weeks. We'll provide a detailed schedule before work begins."
+  },
+  {
+    q: "Are you licensed and insured?",
+    a: "Yes! MichalExp is fully licensed and insured for all remodeling work in Chicago and surrounding suburbs."
+  },
+  {
+    q: "Can you help with design and material selection?",
+    a: "Absolutely. We offer full design consultations and can guide you through material choices to match your vision and budget."
+  },
+  {
+    q: "What areas do you serve?",
+    a: "We serve all of Chicago and the surrounding suburbs. Contact us to see if we work in your area!"
+  },
+  {
+    q: "Do you offer free estimates?",
+    a: "Yes, we provide free, no-obligation estimates for all projects."
+  },
+  {
+    q: "How do you handle project changes or surprises?",
+    a: "We communicate transparently and work with you on any changes or unexpected issues, always providing updated timelines and costs."
+  },
+];
+
+// Convert to simplified format expected by the React component
+const simplifiedFaqs = [{
+  title: "Frequently Asked Questions",
+  items: faqs
+}];
+---
+<section class="w-full py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-2xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-black">Frequently Asked Questions</h2>
+    <FAQSection faqData={simplifiedFaqs} client:load />
+  </div>
+</section>

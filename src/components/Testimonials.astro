@@ -1,0 +1,45 @@
+---
+// Testimonials.astro: Displays 3 customer testimonials with avatar, name, quote, and service performed.
+const testimonials = [
+  {
+    name: "Maria S.",
+    service: "Kitchen Remodel",
+    quote:
+      "We were nervous about remodeling, but Michal and his crew made it so easy. They listened to all our ideas and even suggested a few clever touches. The kitchen feels twice as big now, and we still can't believe how smoothly everything went!",
+    image: "/pictures/kitchen/fullKitchen.jpeg"
+  },
+  {
+    name: "James R.",
+    service: "Bathroom Renovation",
+    quote:
+      "There was a minor delay with some tile delivery, but the team kept us updated and handled it quickly. The new bathroom is even better than we pictured. We really appreciated the attention to detail and how clean they kept the work area.",
+    image: "/pictures/bathroom/shower+tub.jpg"
+  },
+  {
+    name: "Olivia T.",
+    service: "Staircase Renovation",
+    quote:
+      "Our old staircase was creaky and outdated, but now it's the centerpiece of our home! Michal's team worked quickly and paid attention to every detail. The new stairs are beautiful and feel incredibly solid. We get compliments from everyone who visits!",
+    image: "/pictures/stairs/stairs1.jpeg"
+  },
+];
+---
+<section id="testimonials" class="w-full py-16 bg-[color:var(--secondary)]">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold font-display text-center mb-10 text-[color:var(--primary)] leading-tight">Testimonials</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map(({ name, service, quote, image }) => (
+        <div class="bg-[color:var(--background)] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center p-8 text-center h-full">
+          <img src={image} alt={`Project photo for ${service}`} class="w-full h-48 object-cover rounded-lg shadow mb-4" loading="lazy" />
+          <div class="flex flex-col flex-1 justify-between w-full">
+            <blockquote class="italic text-black mb-4 leading-relaxed min-h-[96px]">"{quote}"</blockquote>
+            <div>
+              <div class="font-bold text-black text-lg">{name}</div>
+              <div class="text-sm text-black/70">{service}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactCTA from '../../components/ContactCTA.tsx';
+import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Dumbbell, Bed, Droplets } from 'lucide-react';
+---
+
+<BaseLayout title="Premium Basement Finishing | Chicago's Premier Remodeling Studio">
+  <!-- Hero Section -->
+  <section class="relative h-screen w-full overflow-hidden">
+    <!-- Background image with parallax -->
+    <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/servicesBasement/servicesBasementHero.png');"></div>
+    <!-- Dark-to-light overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-black/30"></div>
+    
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <div class="max-w-[1100px] px-6 py-20 mx-auto text-center">
+        <!-- Headline with gold glow -->
+        <h1 class="opacity-0 text-4xl md:text-6xl font-display text-white mb-4" style="text-shadow: 0 0 8px #D6B56066; animation: fadeInUp 0.6s ease-out 0.2s forwards;">
+          Unlock Your Home's Hidden Potential
+        </h1>
+        <!-- Subheadline with Inter font and opacity -->
+        <p class="opacity-0 mt-4 text-xl md:text-2xl text-[#F2F2F2] font-medium" style="font-family: 'Inter', sans-serif; opacity: 0.85; letter-spacing: 0.02em; animation: fadeInRight 0.6s ease-out 0.4s forwards;">
+          Where Possibilities Become Reality.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <!-- Primary Button with shimmer -->
+          <button class="group rounded-full px-8 py-4 text-lg md:text-xl font-bold uppercase text-[#0B254B] opacity-0 transition-all duration-300" 
+                  data-estimate-button 
+                  style="background: linear-gradient(to right, #D6B560, #F6E4A4, #D6B560); background-size: 200% 100%; animation: fadeInUp 0.6s ease-out 0.6s forwards;"
+                  onmouseover="this.style.backgroundPosition='100% 0'; this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.3)'"
+                  onmouseout="this.style.backgroundPosition='0% 0'; this.style.transform='scale(1)'; this.style.boxShadow='none'">
+            <span>Get Your Free Basement Design</span>
+            <svg class="w-5 h-5 ml-2 inline transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </button>
+          
+          <!-- Secondary Ghost Button -->
+          <a href="#five-step-process" class="group border-2 border-white text-white rounded-full px-8 py-4 text-lg md:text-xl flex items-center justify-center transition-all duration-500 opacity-0 hover:border-transparent hover:text-[#0B254B]" 
+             style="animation: fadeInUp 0.6s ease-out 0.8s forwards; background: transparent;"
+             onmouseover="this.style.background='linear-gradient(to right, #D6B560, #F6E4A4)'; this.style.borderColor='transparent'"
+             onmouseout="this.style.background='transparent'; this.style.borderColor='white'">
+            <span>Our Five Step Process</span>
+            <svg class="w-5 h-5 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="animation: bob 2s ease-in-out infinite;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+        </div>
+        
+        <!-- Trust Row -->
+        <div class="mt-12 flex flex-col sm:flex-row gap-8 justify-center items-center text-white/80 text-sm opacity-0" style="animation: fadeInUp 0.6s ease-out 1s forwards;">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#D6B560]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2l4-4"/>
+            </svg>
+            <span>25+ Years Experience</span>
+          </div>
+          
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#D6B560]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+            <span>100% Satisfaction Guaranteed</span>
+          </div>
+          
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-[#D6B560]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span>Locally Owned & Operated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview -->
+  <section class="py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
+    <div class="container-premium">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          More Than Just Extra Space—It's Additional Living
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] leading-relaxed mb-12">
+          Your basement represents untapped potential—valuable square footage waiting to become your family's 
+          favorite retreat. Our expert basement finishing transforms dark, unused spaces into bright, 
+          welcoming areas that enhance your lifestyle and significantly increase your home's value.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <FileText color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Custom Design</h3>
+          <p class="text-[color:var(--muted-foreground)]">Tailored layouts that maximize your basement's unique dimensions and potential.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <Cloud color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Climate Control</h3>
+          <p class="text-[color:var(--muted-foreground)]">Advanced HVAC and moisture management for year-round comfort.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <Zap color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Smart Features</h3>
+          <p class="text-[color:var(--muted-foreground)]">Integrated lighting, sound, and climate control systems.</p>
+        </div>
+        
+        <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
+          <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
+            <CheckCircle color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-3">Code Compliance</h3>
+          <p class="text-[color:var(--muted-foreground)]">Professional installation meeting all safety and building requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Service Cards -->
+  <section class="py-20 bg-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Complete Basement Solutions
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          From entertainment spaces to home offices, we create basement environments that reflect your lifestyle and enhance your daily living.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Home color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Complete Finishing</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Full basement transformations with framing, insulation, drywall, flooring, and finishing touches.</p>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Gamepad2 color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Entertainment Rooms</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Home theaters, game rooms, and media spaces with custom built-ins and lighting.</p>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Monitor color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Home Offices</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Professional workspaces with built-in desks, storage, and optimal lighting for productivity.</p>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Dumbbell color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Fitness Centers</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Home gyms with specialized flooring, mirrors, and ventilation for workout spaces.</p>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Bed color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Guest Suites</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Complete living areas with bedrooms, bathrooms, and kitchenettes for extended guests.</p>
+        </div>
+        
+        <div class="glass-effect p-8 rounded-3xl hover-lift group">
+          <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <Droplets color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
+          </div>
+          <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4 text-center">Moisture Control</h3>
+          <p class="text-[color:var(--muted-foreground)] mb-6 text-center">Waterproofing solutions and humidity control systems for dry, comfortable spaces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container-premium">
+      <div class="text-center mb-16">
+        <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
+          Our Proven 5-Step Process
+        </h2>
+        <p class="text-body-lg text-[color:var(--muted-foreground)] max-w-3xl mx-auto">
+          We've perfected our renovation process over 25+ years to minimize disruption while maximizing results.
+        </p>
+      </div>
+      
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--primary)] to-[color:var(--accent)] opacity-30 hidden lg:block"></div>
+        
+        <div class="space-y-12 lg:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">1. Structural Assessment & Planning</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">We evaluate your basement's structure, moisture levels, and mechanical systems to create a comprehensive finishing plan that maximizes space and functionality.</p>
+                <!-- <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div> -->
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/servicesBasement/servicesBasementStep1.png" alt="Basement structural assessment" class="w-full h-64 object-cover object-center rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">2. Waterproofing & Insulation</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Professional waterproofing installation and high-performance insulation to ensure your basement stays dry, comfortable, and energy-efficient year-round.</p>
+                <!-- <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 1-2 weeks</div> -->
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/servicesBasement/servicesBasementStep2.png" alt="Basement waterproofing process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">3. Framing & Systems Installation</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Strategic framing design and installation of electrical, plumbing, and HVAC systems to support your basement's new functionality and comfort.</p>
+                <!-- <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div> -->
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/servicesBasement/servicesBasementStep3.png" alt="Basement framing and systems" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="relative flex flex-col lg:flex-row-reverse items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-left lg:pl-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">4. Flooring & Finishing</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Installation of drywall, premium flooring, trim work, and custom features to transform your basement into a beautiful, functional living space.</p>
+                <!-- <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 2-3 weeks</div> -->
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
+            <div class="lg:w-1/2 lg:pr-12">
+              <img src="/pictures/servicesBasement/servicesBasementStep4.png" alt="Basement flooring and finishing" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Step 5 -->
+          <div class="relative flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 text-center lg:text-right lg:pr-12">
+              <div class="glass-effect p-8 rounded-3xl">
+                <h3 class="text-xl font-bold text-[color:var(--primary)] mb-4">5. Final Touches & Move-In Ready</h3>
+                <p class="text-[color:var(--muted-foreground)] mb-4">Final inspections, touch-ups, and installation of fixtures and lighting to deliver your completely finished basement ready for immediate enjoyment.</p>
+                <!-- <div class="text-sm text-[color:var(--accent)] font-semibold">Timeline: 3-5 days</div> -->
+              </div>
+            </div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
+            <div class="lg:w-1/2 lg:pl-12">
+              <img src="/pictures/servicesBasement/servicesBasementStep5.png" alt="Basement final touches" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- React modal for consultation -->
+  <ContactCTA client:load />
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estimateButtons = document.querySelectorAll('[data-estimate-button]');
+    estimateButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.dispatchEvent(new CustomEvent('openEstimateModal'));
+      });
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+</style>
