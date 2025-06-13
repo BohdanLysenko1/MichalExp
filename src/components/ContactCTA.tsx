@@ -42,14 +42,18 @@ export default function ContactCTA() {
   const handleBack = (e: React.FormEvent) => { e.preventDefault(); setStep(1); };
   const handleSubmit = async (e: React.FormEvent) => { 
     e.preventDefault(); 
-    // Only send the fields you want to HubSpot
+    // Send every form field you’ve collected so the API route can map them
     const contactData = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      address: formData.address,
-      // Add more fields if your API expects them
+      firstName : formData.firstName,
+      lastName  : formData.lastName,
+      email     : formData.email,
+      phone     : formData.phone,
+      address   : formData.address,
+      projectType   : formData.projectType,
+      squareFootage : formData.squareFootage,
+      budget        : formData.budget,
+      startDate     : formData.startDate,
+      details       : formData.details,
     };
 
     try {

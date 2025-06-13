@@ -21,6 +21,11 @@ export const POST: APIRoute = async ({ request }) => {
   if (data.lastName) properties.lastname = data.lastName;
   if (data.phone) properties.phone = data.phone;
   if (data.address) properties.address = data.address;
+  if (data.projectType) properties.project_type = data.projectType;
+  if (data.squareFootage) properties.square_footage = data.squareFootage;
+  if (data.budget) properties.budget = data.budget;
+  if (data.startDate) properties.preferred_start_date = data.startDate;
+  if (data.details) properties.additional_details = data.details;
 
   const hubspotData = {
     properties
