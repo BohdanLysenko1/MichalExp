@@ -9,6 +9,7 @@ export default function ContactCTA() {
   const [open, setOpen] = React.useState(false);
   const [step, setStep] = React.useState(1);
   const [showThankYou, setShowThankYou] = React.useState(false);
+  const [duplicateSubmission, setDuplicateSubmission] = React.useState(false);
   const [formData, setFormData] = React.useState({ 
     firstName: '', 
     lastName: '', 
@@ -84,8 +85,10 @@ export default function ContactCTA() {
             details: '' 
           });
         }, 3000);
+      } else if (result.duplicate) {
+        // Duplicate submission detected
+        setDuplicateSubmission(true);
       } else {
-        // Optionally show an error message
         alert('There was an error submitting the form. Please try again.');
       }
     } catch (err) {
@@ -98,6 +101,14 @@ export default function ContactCTA() {
     window.addEventListener('openEstimateModal', openHandler);
     return () => window.removeEventListener('openEstimateModal', openHandler);
   }, []);
+
+  // Reset duplicate/thank-you state each time modal opens
+  React.useEffect(() => {
+    if (open) {
+      setDuplicateSubmission(false);
+      setShowThankYou(false);
+    }
+  }, [open]);
 
   return (
     <section id="contact" className="w-full py-16 bg-[color:var(--secondary)] flex flex-col items-center justify-center">
@@ -139,7 +150,23 @@ export default function ContactCTA() {
               leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center">
-                {showThankYou ? (
+                {duplicateSubmission ? (
+                  <div className="text-center max-w-xs">
+                    <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Application Already Submitted</h3>
+                    <p className="mb-6 text-gray-600">
+                      It looks like you've already submitted the form.
+                      <br />
+                      If you have any additional questions, please email us at&nbsp;
+                      <a href="mailto:info@michalexp.com" className="text-[color:var(--accent)] underline">info@michalexp.com</a>.
+                    </p>
+                    <button
+                      onClick={() => setOpen(false)}
+                      className={`${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
+                    >
+                      Close
+                    </button>
+                  </div>
+                ) : showThankYou ? (
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Thank you for your submission!</h3>
                     <p className="mb-6 text-gray-600">We will be in touch with you shortly.</p>

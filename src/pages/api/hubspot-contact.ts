@@ -41,6 +41,11 @@ export const POST: APIRoute = async ({ request }) => {
   });
 
   if (!response.ok) {
+    // If the email already exists HubSpot returns 409 Conflict
+    if (response.status === 409) {
+      return new Response(JSON.stringify({ success: false, duplicate: true }), { status: 200 });
+    }
+
     const errorText = await response.text();
     console.error('HubSpot API error:', errorText);
     return new Response(JSON.stringify({ error: 'Failed to create contact', details: errorText }), { status: 500 });
