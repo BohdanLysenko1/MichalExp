@@ -13,4 +13,5 @@ export default defineConfig({
       exclude: [], // Add problematic deps here if identified
     },
   },
+  output: 'server',
 });

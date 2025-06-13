@@ -8,6 +8,7 @@ const buttonClass = "px-6 py-3 rounded-full font-semibold shadow focus:outline-n
 export default function ContactCTA() {
   const [open, setOpen] = React.useState(false);
   const [step, setStep] = React.useState(1);
+  const [showThankYou, setShowThankYou] = React.useState(false);
   const [formData, setFormData] = React.useState({ 
     firstName: '', 
     lastName: '', 
@@ -39,11 +40,53 @@ export default function ContactCTA() {
   
   const handleNext = (e: React.FormEvent) => { e.preventDefault(); setStep(2); };
   const handleBack = (e: React.FormEvent) => { e.preventDefault(); setStep(1); };
-  const handleSubmit = (e: React.FormEvent) => { 
+  const handleSubmit = async (e: React.FormEvent) => { 
     e.preventDefault(); 
-    // Form would be submitted to backend here
-    setOpen(false); 
-    setStep(1); 
+    // Only send the fields you want to HubSpot
+    const contactData = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      // Add more fields if your API expects them
+    };
+
+    try {
+      const response = await fetch('/api/hubspot-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactData),
+      });
+      const result = await response.json();
+      if (result.success) {
+        // Show thank you message
+        setShowThankYou(true);
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setShowThankYou(false);
+          setOpen(false); 
+          setStep(1);
+          setFormData({ 
+            firstName: '', 
+            lastName: '', 
+            email: '', 
+            phone: '', 
+            address: '', 
+            projectType: '', 
+            squareFootage: '', 
+            budget: '', 
+            startDate: '', 
+            details: '' 
+          });
+        }, 3000);
+      } else {
+        // Optionally show an error message
+        alert('There was an error submitting the form. Please try again.');
+      }
+    } catch (err) {
+      alert('There was an error submitting the form. Please try again.');
+    }
   };
 
   React.useEffect(() => {
@@ -92,133 +135,140 @@ export default function ContactCTA() {
               leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)] text-center">Book Your Free Consultation</h3>
-                <p className="mb-6 text-gray-600 text-center">Fill out the form below and our team will get in touch to discuss your project.</p>
-                <form className="w-full flex flex-col gap-4" onSubmit={step === 1 ? handleNext : handleSubmit}>
-                  {step === 1 && (
-                    <>
-                      <div className="flex gap-4">
-                        <input
-                          type="text"
-                          name="firstName"
-                          placeholder="First Name"
-                          value={formData.firstName}
-                          onChange={handleChange}
-                          className={inputClass}
-                          required
-                        />
-                        <input
-                          type="text"
-                          name="lastName"
-                          placeholder="Last Name"
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          className={inputClass}
-                          required
-                        />
-                      </div>
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                        title="Please enter a valid email address"
-                        className={inputClass}
-                        required
-                      />
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
-                        title="Phone number must be in 123-456-7890 format"
-                        className={inputClass}
-                        required
-                      />
-                      <input 
-                        type="text" 
-                        name="address" 
-                        placeholder="Address" 
-                        value={formData.address} 
-                        onChange={handleChange} 
-                        className={inputClass} 
-                        required 
-                      />
-                      <button 
-                        type="submit" 
-                        className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
-                      >
-                        Next
-                      </button>
-                    </>
-                  )}
-                  {step === 2 && (
-                    <>
-                      <input 
-                        type="text" 
-                        name="projectType" 
-                        placeholder="Project Type" 
-                        value={formData.projectType} 
-                        onChange={handleChange} 
-                        className={inputClass} 
-                        required 
-                      />
-                      <input 
-                        type="number" 
-                        name="squareFootage" 
-                        placeholder="Square Footage" 
-                        value={formData.squareFootage} 
-                        onChange={handleChange} 
-                        className={inputClass} 
-                        required 
-                      />
-                      <input 
-                        type="text" 
-                        name="budget" 
-                        placeholder="Budget" 
-                        value={formData.budget} 
-                        onChange={handleChange} 
-                        className={inputClass} 
-                        required 
-                      />
-                      <input 
-                        type="date" 
-                        name="startDate" 
-                        placeholder="Preferred Start Date" 
-                        value={formData.startDate} 
-                        onChange={handleChange} 
-                        className={inputClass} 
-                        required 
-                      />
-                      <textarea 
-                        name="details" 
-                        placeholder="Additional Details" 
-                        value={formData.details} 
-                        onChange={handleChange} 
-                        className={`${inputClass} min-h-[100px]`} 
-                      />
-                      <div className="flex justify-between">
-                        <button 
-                          type="button" 
-                          onClick={handleBack} 
-                          className={`mt-4 ${buttonClass} bg-gray-300 text-gray-700 hover:bg-gray-400`}
-                        >
-                          Back
-                        </button>
-                        <button 
-                          type="submit" 
-                          className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </>
-                  )}
-                </form>
+                {showThankYou ? (
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Thank you for your submission!</h3>
+                    <p className="mb-6 text-gray-600">We will be in touch with you shortly.</p>
+                  </div>
+                ) : (
+                  <>
+                    <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)] text-center">Book Your Free Consultation</h3>
+                    <p className="mb-6 text-gray-600 text-center">Fill out the form below and our team will get in touch to discuss your project.</p>
+                    <form className="w-full flex flex-col gap-4" onSubmit={step === 1 ? handleNext : handleSubmit}>
+                      {step === 1 && (
+                        <>
+                          <div className="flex gap-4">
+                            <input
+                              type="text"
+                              name="firstName"
+                              placeholder="First Name"
+                              value={formData.firstName}
+                              onChange={handleChange}
+                              className={inputClass}
+                              required
+                            />
+                            <input
+                              type="text"
+                              name="lastName"
+                              placeholder="Last Name"
+                              value={formData.lastName}
+                              onChange={handleChange}
+                              className={inputClass}
+                              required
+                            />
+                          </div>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className={inputClass}
+                            required
+                          />
+                          <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Phone Number"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
+                            title="Phone number must be in 123-456-7890 format"
+                            className={inputClass}
+                            required
+                          />
+                          <input 
+                            type="text" 
+                            name="address" 
+                            placeholder="Address" 
+                            value={formData.address} 
+                            onChange={handleChange} 
+                            className={inputClass} 
+                            required 
+                          />
+                          <button 
+                            type="submit" 
+                            className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
+                          >
+                            Next
+                          </button>
+                        </>
+                      )}
+                      {step === 2 && (
+                        <>
+                          <input 
+                            type="text" 
+                            name="projectType" 
+                            placeholder="Project Type" 
+                            value={formData.projectType} 
+                            onChange={handleChange} 
+                            className={inputClass} 
+                            required 
+                          />
+                          <input 
+                            type="number" 
+                            name="squareFootage" 
+                            placeholder="Square Footage" 
+                            value={formData.squareFootage} 
+                            onChange={handleChange} 
+                            className={inputClass} 
+                            required 
+                          />
+                          <input 
+                            type="text" 
+                            name="budget" 
+                            placeholder="Budget" 
+                            value={formData.budget} 
+                            onChange={handleChange} 
+                            className={inputClass} 
+                            required 
+                          />
+                          <input 
+                            type="date" 
+                            name="startDate" 
+                            placeholder="Preferred Start Date" 
+                            value={formData.startDate} 
+                            onChange={handleChange} 
+                            className={inputClass} 
+                            required 
+                          />
+                          <textarea 
+                            name="details" 
+                            placeholder="Additional Details" 
+                            value={formData.details} 
+                            onChange={handleChange} 
+                            className={`${inputClass} min-h-[100px]`} 
+                          />
+                          <div className="flex justify-between">
+                            <button 
+                              type="button" 
+                              onClick={handleBack} 
+                              className={`mt-4 ${buttonClass} bg-gray-300 text-gray-700 hover:bg-gray-400`}
+                            >
+                              Back
+                            </button>
+                            <button 
+                              type="submit" 
+                              className={`mt-4 ${buttonClass} bg-[color:var(--primary)] text-white hover:bg-[color:var(--accent)]`}
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </>
+                      )}
+                    </form>
+                  </>
+                )}
               </Dialog.Panel>
             </Transition.Child>
           </div>
