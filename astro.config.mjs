@@ -1,16 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel/serverless';
 import react from '@astrojs/react';
 
 export default defineConfig({
-  adapter: node({ mode: 'standalone' }),
+  adapter: vercel(),
   integrations: [
     tailwind({ applyBaseStyles: true }),
     react(),
   ],
   trailingSlash: 'never',
-  output: 'server',
+  output: 'hybrid',
   vite: {
     optimizeDeps: {
       exclude: [], // Add problematic deps here if identified
