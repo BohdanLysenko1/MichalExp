@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
   ],
   trailingSlash: 'never',
-  output: 'hybrid',
+  output: 'server',
   vite: {
     optimizeDeps: {
       exclude: [], // Add problematic deps here if identified
