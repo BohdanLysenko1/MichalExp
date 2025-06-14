@@ -162,6 +162,9 @@
     }
     
     function showSlide(n) {
+      // Safety check: ensure slides array has elements and index is valid
+      if (!slides.length || n < 0 || n >= slides.length) return;
+      
       slides.forEach(slide => {
         slide.classList.remove('opacity-100');
         slide.classList.add('opacity-0');
@@ -175,8 +178,11 @@
         indicator.classList.add('bg-white/50');
       });
       
-      indicators[n].classList.add('active', 'bg-white');
-      indicators[n].classList.remove('bg-white/50');
+      // Safety check: ensure indicators array has element at index n
+      if (indicators[n]) {
+        indicators[n].classList.add('active', 'bg-white');
+        indicators[n].classList.remove('bg-white/50');
+      }
     }
     
     function nextSlide() {
