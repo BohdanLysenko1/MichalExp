@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
-  const HUBSPOT_ACCESS_TOKEN = import.meta.env.HUBSPOT_API_KEY;
+  // Use runtime environment variable to avoid embedding secrets into the build output
+  const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_API_KEY;
   if (!HUBSPOT_ACCESS_TOKEN) {
     return new Response(JSON.stringify({ error: 'Missing HubSpot access token' }), { status: 500 });
   }
