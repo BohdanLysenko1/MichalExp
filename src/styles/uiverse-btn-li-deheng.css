@@ -13,9 +13,10 @@
   align-items: center;
   padding: 5px 30px;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: clamp(16px, 5vw, 30px);
+  letter-spacing: 0.025em;
   color: var(--color-text);
   background: var(--color-background);
   transition: 1s;
@@ -106,7 +107,9 @@
   --color-background: #D4AF37;
   --color-outline: #B8941F80;
   --color-shadow: #B8941F;
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
+  letter-spacing: 0.025em;
   border: 2px solid #D4AF37;
 }
 
