@@ -99,3 +99,53 @@
     outline-offset: 0;
   }
 }
+
+/* Gold button variant for portfolio */
+.btn-content.btn-gold {
+  --color-text: #0F2A44;
+  --color-background: #D4AF37;
+  --color-outline: #B8941F80;
+  --color-shadow: #B8941F;
+  font-weight: 600;
+  border: 2px solid #D4AF37;
+}
+
+.btn-content.btn-gold:hover, .btn-content.btn-gold:focus {
+  box-shadow: 0 0 0.6em 0 var(--color-background);
+  transform: translateY(-2px);
+}
+
+.btn-content.btn-gold .icon-arrow svg path {
+  stroke: #0F2A44;
+}
+
+.btn-content.btn-gold .icon-arrow svg circle {
+  fill: #0F2A44;
+}
+
+@keyframes color_anim_gold {
+  0% {
+    fill: #0F2A44;
+    stroke: #0F2A44;
+  }
+  50% {
+    fill: #D4AF37;
+    stroke: #D4AF37;
+  }
+  100% {
+    fill: #0F2A44;
+    stroke: #0F2A44;
+  }
+}
+
+.btn-content.btn-gold:hover #arrow-icon-three {
+  animation: color_anim_gold 1s infinite 0.2s;
+}
+
+.btn-content.btn-gold:hover #arrow-icon-one {
+  animation: color_anim_gold 1s infinite 0.6s;
+}
+
+.btn-content.btn-gold:hover #arrow-icon-two {
+  animation: color_anim_gold 1s infinite 0.4s;
+}

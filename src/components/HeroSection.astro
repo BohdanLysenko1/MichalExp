@@ -33,8 +33,40 @@
     <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
       <img src="/pictures/stairs/stairs5.jpg" alt="Remodeling project stairs5" loading="lazy" decoding="async" class="lazy-img object-cover" />
     </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/kitchen/kitchenCabinets.jpg" alt="Remodeling project kitchenCabinets" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/stairs/stairs4.jpg" alt="Remodeling project stairs4" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/bathroom/shower+tub.jpg" alt="Remodeling project shower and tub" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/kitchen/kitchenCabinets2.jpg" alt="Remodeling project kitchenCabinets2" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/other stuff/livingRoom.jpeg" alt="Remodeling project livingRoom" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/bathroom/sink+shower.jpeg" alt="Remodeling project sink and shower" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/bathroom/IMG_8650.jpeg" alt="Remodeling project bathroom detail" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/other stuff/doors.jpg" alt="Remodeling project doors" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/stairs/stairs1.jpeg" alt="Remodeling project stairs1" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/bathroom/IMG_8651.jpeg" alt="Remodeling project bathroom finish" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
+    <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/pictures/other stuff/doorWithTile.jpeg" alt="Remodeling project door with tile" loading="lazy" decoding="async" class="lazy-img object-cover" />
+    </div>
 
-    
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/40 z-10"></div>
     
@@ -48,7 +80,7 @@
     
     <!-- Carousel indicators -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-wrap justify-center gap-2 w-full max-w-xs px-2">
-      {Array(9).fill(0).map((_, i) => (
+      {Array(15).fill(0).map((_, i) => (
         <button 
           class={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${i === 0 ? 'bg-white active' : 'bg-white/50 hover:bg-white'} carousel-indicator`} 
           data-index={i} 
@@ -69,7 +101,7 @@
         MichalExp Remodeling
       </h1>
       
-      <div class="btn-conteiner">
+      <div class="btn-conteiner flex flex-col sm:flex-row gap-4 justify-center items-center">
         <button class="btn-content" data-estimate-button aria-label="Schedule a Free Estimate">
           <span class="sm:hidden">Estimate</span><span class="hidden sm:inline">Schedule an Estimate</span>
           <span class="icon-arrow">
@@ -87,6 +119,24 @@
             </svg>
           </span>
         </button>
+        
+        <a href="#portfolio" class="btn-content btn-gold" aria-label="View Our Portfolio">
+          <span class="sm:hidden">Portfolio</span><span class="hidden sm:inline">View Our Work</span>
+          <span class="icon-arrow">
+            <svg width="40" height="20" viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="arrow-icon-one">
+                <path d="M0 10 H40" stroke="#0F2A44" stroke-width="3"/>
+              </g>
+              <g id="arrow-icon-two">
+                <path d="M40 10 L35 5" stroke="#0F2A44" stroke-width="3"/>
+                <path d="M40 10 L35 15" stroke="#0F2A44" stroke-width="3"/>
+              </g>
+              <g id="arrow-icon-three">
+                <circle cx="47" cy="10" r="3" fill="#0F2A44" />
+              </g>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </div>
