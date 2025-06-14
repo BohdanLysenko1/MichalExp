@@ -1,4 +1,5 @@
 {
+  "_comment": "Vercel configuration for Astro deployment with serverless functions",
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
