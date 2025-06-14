@@ -12,14 +12,14 @@ function getNavPath(anchor) {
   }
 }
 ---
-<footer class="bg-[color:var(--primary)] text-white rounded-t-3xl py-16 mt-16 shadow-2xl">
-  <div class="container mx-auto px-4">
+<footer class="bg-[color:var(--primary)] text-white rounded-t-3xl py-12 sm:py-20 mt-16 shadow-2xl">
+  <div class="container-premium mx-auto">
     <!-- Top Section: Logo, Services & Links, Navigation, and Contact Info -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-14">
       <!-- Logo and Tagline -->
       <div class="space-y-4">
         <div class="flex items-center gap-2">
-          <img src="/pictures/logo/logo2_nobackground.png" alt="MichalExp Logo" class="h-16 w-auto filter invert" />
+          <img src="/pictures/logo/logo2_nobackground.png" loading="lazy" decoding="async" alt="MichalExp Logo" class="h-16 w-auto filter invert" />
           <span class="font-display text-4xl font-bold tracking-wide text-white">
   Michal<span class="text-[color:var(--accent)]">Exp</span>
 </span>
@@ -85,7 +85,7 @@ function getNavPath(anchor) {
     </div>
     
     <!-- Middle section: Working hours & Follow us -->    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pb-8 border-b border-[color:var(--accent)]/30">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pb-6 sm:pb-8 border-b border-[color:var(--accent)]/30">
       <!-- Working Hours -->      
       <div>
         <h3 class="text-xl font-semibold font-display mb-4 text-[color:var(--accent)]">Working Hours</h3>
@@ -111,7 +111,7 @@ function getNavPath(anchor) {
       <!-- Social Media -->      
       <div class="md:text-right">
         <h3 class="text-xl font-semibold font-display mb-4 text-[color:var(--accent)]">Follow Us</h3>
-        <div class="flex gap-5 md:justify-end">
+        <div class="flex gap-5 justify-center md:justify-end">
           <a href="#" aria-label="Facebook" class="bg-[color:var(--primary)]/70 p-3 rounded-lg hover:bg-[color:var(--primary)]/90 transition-colors">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-[color:var(--accent)]">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>

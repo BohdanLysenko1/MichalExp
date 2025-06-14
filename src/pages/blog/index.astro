@@ -1,16 +1,16 @@
 ---
+import type { MarkdownInstance } from 'astro';
 layout: "../../layouts/BaseLayout.astro"
 title: "Blog"
+
+const modules = import.meta.glob<MarkdownInstance<any>>("../../content/blog/*.md", { eager: true });
+const posts = Object.entries(modules)
+  .map(([path, post]) => {
+    const slug = path.split('/').pop()?.replace('.md', '') ?? '';
+    return { slug, ...(post.frontmatter as Record<string, any>) };
+  })
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
-<script lang="ts">
-  const modules = import.meta.glob('../../content/blog/*.md', { eager: true });
-  const posts = Object.entries(modules)
-    .map(([path, post]: [string, any]) => {
-      const slug = path.split('/').pop().replace('.md', '');
-      return { slug, ...(post.frontmatter as any) };
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-</script>
 <section class="container mx-auto py-8">
   <h1 class="text-4xl font-playfair mb-4">Blog</h1>
   <ul class="space-y-6">

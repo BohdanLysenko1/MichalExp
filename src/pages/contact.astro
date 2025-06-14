@@ -1,12 +1,10 @@
 ---
 layout: "../layouts/BaseLayout.astro"
 title: "Contact"
----
----
 import { Dialog } from "../components/ui/dialog";
 ---
-<section class="container mx-auto py-12 max-w-2xl">
-  <h1 class="text-4xl font-playfair mb-4">Contact MichalExp</h1>
+<section class="container-premium py-16 sm:py-20 max-w-2xl text-base sm:text-lg">
+  <h1 class="text-3xl sm:text-4xl font-playfair mb-6">Contact MichalExp</h1>
   <p class="text-lg mb-6">Ready to start your remodeling project? Fill out the form below or call us for a free estimate.</p>
   <div class="mb-8">
     <Dialog client:idle>
@@ -20,7 +18,7 @@ import { Dialog } from "../components/ui/dialog";
         <label class="font-semibold">Message
           <textarea name="message" required class="block w-full mt-1 border rounded px-3 py-2" rows="4"></textarea>
         </label>
-        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Send Message</button>
+        <button type="submit" class="btn-primary w-full sm:w-auto justify-center">Send Message</button>
       </form>
     </Dialog>
   </div>

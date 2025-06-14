@@ -24,15 +24,15 @@ const testimonials = [
   },
 ];
 ---
-<section id="testimonials" class="w-full py-16 bg-[color:var(--secondary)]">
-  <div class="container mx-auto px-4">
+<section id="testimonials" class="w-full py-12 sm:py-16 bg-[color:var(--secondary)]">
+  <div class="container-premium">
     <h2 class="text-3xl md:text-4xl font-bold font-display text-center mb-10 text-[color:var(--primary)] leading-tight">Testimonials</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       {testimonials.map(({ name, service, quote, image }) => (
-        <div class="bg-[color:var(--background)] rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center p-8 text-center h-full">
-          <img src={image} alt={`Project photo for ${service}`} class="w-full h-48 object-cover rounded-lg shadow mb-4" loading="lazy" />
+        <div class="bg-[color:var(--background)] rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transform transition-all duration-300 flex flex-col items-center p-6 sm:p-8 text-center h-full">
+          <img src={image} alt={`Project photo for ${service}`} class="w-full h-48 object-cover rounded-lg shadow mb-4" loading="lazy" decoding="async" />
           <div class="flex flex-col flex-1 justify-between w-full">
-            <blockquote class="italic text-black mb-4 leading-relaxed min-h-[96px]">"{quote}"</blockquote>
+            <blockquote class="italic text-black mb-4 leading-relaxed text-sm sm:text-base min-h-[96px]">"{quote}"</blockquote>
             <div>
               <div class="font-bold text-black text-lg">{name}</div>
               <div class="text-sm text-black/70">{service}</div>

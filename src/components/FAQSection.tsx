@@ -101,14 +101,14 @@ type FAQSectionProps = {
 
 export default function FAQSection({ faqData = defaultFaqCategories }: FAQSectionProps) {
   return (
-    <section id="faq" className="w-full py-24 bg-[color:var(--background)]">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <section id="faq" className="w-full py-12 sm:py-24 bg-[color:var(--background)]">
+      <div className="container-premium max-w-3xl">
         {!faqData[0].title.includes("Frequently Asked Questions") && (
           <h2 className="text-3xl md:text-4xl font-bold font-display text-left mb-14 text-[color:var(--primary)] leading-tight">
             Frequently Asked Questions
           </h2>
         )}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {faqData.map((cat, catIdx) => (
             <Disclosure
               key={catIdx}

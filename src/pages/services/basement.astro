@@ -7,7 +7,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
 
 <BaseLayout title="Premium Basement Finishing | Chicago's Premier Remodeling Studio">
   <!-- Hero Section -->
-  <section class="relative h-screen w-full overflow-hidden">
+  <section class="relative min-h-dvh w-full overflow-hidden">
     <!-- Background image with parallax -->
     <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image:url('/pictures/servicesBasement/servicesBasementHero.png');"></div>
     <!-- Dark-to-light overlay -->
@@ -79,7 +79,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
   </section>
 
   <!-- Service Overview -->
-  <section class="py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-[color:var(--gray-50)]">
     <div class="container-premium">
       <div class="max-w-4xl mx-auto text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
@@ -92,7 +92,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         <div class="text-center glass-effect p-8 rounded-3xl hover-lift">
           <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center">
             <FileText color="#D4AF37" class="w-8 h-8" strokeWidth={1.5} />
@@ -129,7 +129,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
   </section>
 
   <!-- Premium Service Cards -->
-  <section class="py-20 bg-white">
+  <section class="py-16 sm:py-20 bg-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
@@ -140,7 +140,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-14 sm:mb-16">
         <div class="glass-effect p-8 rounded-3xl hover-lift group">
           <div class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             <Home color="#D4AF37" class="w-10 h-10" strokeWidth={1.5} />
@@ -193,7 +193,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
   </section>
 
   <!-- Process Timeline -->
-  <section id="five-step-process" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+  <section id="five-step-process" class="py-16 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
     <div class="container-premium">
       <div class="text-center mb-16">
         <h2 class="text-heading-lg font-display font-bold mb-6 text-[color:var(--primary)]">
@@ -220,7 +220,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">1</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/servicesBasement/servicesBasementStep1.png" alt="Basement structural assessment" class="w-full h-64 object-cover object-center rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesBasement/servicesBasementStep1.png" alt="Basement structural assessment" loading="lazy" decoding="async" class="process-img" />
             </div>
           </div>
           
@@ -235,7 +235,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">2</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/servicesBasement/servicesBasementStep2.png" alt="Basement waterproofing process" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesBasement/servicesBasementStep2.png" alt="Basement waterproofing process" loading="lazy" decoding="async" class="process-img" />
             </div>
           </div>
           
@@ -250,7 +250,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">3</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/servicesBasement/servicesBasementStep3.png" alt="Basement framing and systems" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesBasement/servicesBasementStep3.png" alt="Basement framing and systems" loading="lazy" decoding="async" class="process-img" />
             </div>
           </div>
           
@@ -265,7 +265,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">4</div>
             <div class="lg:w-1/2 lg:pr-12">
-              <img src="/pictures/servicesBasement/servicesBasementStep4.png" alt="Basement flooring and finishing" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesBasement/servicesBasementStep4.png" alt="Basement flooring and finishing" loading="lazy" decoding="async" class="process-img" />
             </div>
           </div>
           
@@ -280,7 +280,7 @@ import { Home, FileText, Cloud, Zap, CheckCircle, Theater, Gamepad2, Monitor, Du
             </div>
             <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[color:var(--accent)] rounded-full flex items-center justify-center text-white font-bold text-xl z-10 hidden lg:flex">5</div>
             <div class="lg:w-1/2 lg:pl-12">
-              <img src="/pictures/servicesBasement/servicesBasementStep5.png" alt="Basement final touches" class="w-full h-64 object-cover rounded-2xl shadow-lg" />
+              <img src="/pictures/servicesBasement/servicesBasementStep5.png" alt="Basement final touches" loading="lazy" decoding="async" class="process-img" />
             </div>
           </div>
         </div>

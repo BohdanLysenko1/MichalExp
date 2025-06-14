@@ -141,8 +141,8 @@ export default function PortfolioTeaser({ categories }: Props) {
   }, []);
 
   return (
-    <section id="portfolio" className="w-full py-16 bg-[color:var(--secondary)]">
-      <div className="container mx-auto px-4 min-h-[300px]">
+    <section id="portfolio" className="w-full py-12 sm:py-16 bg-[color:var(--secondary)]">
+      <div className="container-premium min-h-[300px]">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold font-display text-[#0F2A44] leading-tight relative inline-block">
             Our Work
@@ -165,7 +165,7 @@ export default function PortfolioTeaser({ categories }: Props) {
                     
                     {isOpen && (
                       <Disclosure.Panel static className="overflow-hidden mt-4 bg-white/50 p-6 rounded-xl">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                           {images.map((src, idx) => (
                             <ProjectImage
                               key={src}

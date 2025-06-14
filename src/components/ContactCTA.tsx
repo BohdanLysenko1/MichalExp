@@ -111,7 +111,7 @@ export default function ContactCTA() {
   }, [open]);
 
   return (
-    <section id="contact" className="w-full py-16 bg-[color:var(--secondary)] flex flex-col items-center justify-center">
+    <section id="contact" className="w-full py-12 sm:py-24 bg-[color:var(--secondary)] flex flex-col items-center justify-center px-4">
       <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-6 text-[color:var(--primary)] leading-tight">
         Ready to transform your space?
       </h2>
@@ -136,7 +136,7 @@ export default function ContactCTA() {
       </div>
       <Transition.Root show={open} as={React.Fragment}>
         <Dialog as="div" className="fixed z-50 inset-0 overflow-y-auto" open={open} onClose={setOpen}>
-          <div className="flex items-center justify-center min-h-screen px-4">
+          <div className="flex items-center justify-center min-h-dvh px-4">
             <Transition.Child
               as={React.Fragment}
               enter="ease-out duration-200" enterFrom="opacity-0" enterTo="opacity-100"
@@ -149,7 +149,7 @@ export default function ContactCTA() {
               enter="ease-out duration-200" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100"
               leave="ease-in duration-150" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center">
+              <Dialog.Panel className="relative max-w-lg w-full p-8 rounded-2xl bg-white shadow-xl flex flex-col items-center max-h-[90dvh] overflow-y-auto">
                 {duplicateSubmission ? (
                   <div className="text-center max-w-xs">
                     <h3 className="text-2xl font-bold mb-2 text-[color:var(--primary)]">Application Already Submitted</h3>

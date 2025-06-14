@@ -40,18 +40,18 @@ const services = [
   },
 ];
 ---
-<section id="services" class="w-full py-16 bg-[color:var(--background)]">
-  <div class="container mx-auto px-4">
+<section id="services" class="w-full py-12 sm:py-16 bg-[color:var(--background)]">
+  <div class="container-premium">
     <h2 class="text-3xl md:text-4xl font-bold font-display text-center mb-10 text-[color:var(--primary)] leading-tight">Our Services</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       {services.map(({ icon: Icon, title, desc, href }) => (
-        <div class="bg-white rounded-xl shadow-md flex flex-col items-center p-8 text-center hover:shadow-xl transition-shadow">
+        <div class="service-card flex flex-col items-center text-center hover:shadow-xl transition-shadow">
           <div class="mb-4 text-[color:var(--primary)]">
             <Icon size={40} strokeWidth={1.5} />
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-[color:var(--primary)]">{title}</h3>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-[color:var(--primary)]">{title}</h3>
           <p class="text-gray-600 mb-4">{desc}</p>
-          <a href={href} class="inline-block mt-auto px-6 py-2 rounded-full bg-[color:var(--primary)] text-white font-medium shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">
+          <a href={href} class="inline-block mt-auto px-6 py-2 sm:py-3 rounded-full bg-[color:var(--primary)] text-white font-medium shadow hover:bg-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent)] focus:ring-offset-2 transition-all duration-200">
             Learn More
           </a>
         </div>
