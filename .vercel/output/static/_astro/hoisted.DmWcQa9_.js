@@ -1,0 +1,1 @@
+import"./hoisted.CRHlpsnn.js";document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("[data-estimate-button]").forEach(t=>{t.addEventListener("click",e=>{e.preventDefault(),window.dispatchEvent(new CustomEvent("openEstimateModal"))})})});

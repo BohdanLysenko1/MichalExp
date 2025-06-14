@@ -1,0 +1,124 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/about/",
+			"headers": {
+				"Location": "/about"
+			},
+			"status": 308
+		},
+		{
+			"src": "/blog/([^/]+?)/",
+			"headers": {
+				"Location": "/blog/$1"
+			},
+			"status": 308
+		},
+		{
+			"src": "/blog/",
+			"headers": {
+				"Location": "/blog"
+			},
+			"status": 308
+		},
+		{
+			"src": "/contact/",
+			"headers": {
+				"Location": "/contact"
+			},
+			"status": 308
+		},
+		{
+			"src": "/faq/",
+			"headers": {
+				"Location": "/faq"
+			},
+			"status": 308
+		},
+		{
+			"src": "/gallery/",
+			"headers": {
+				"Location": "/gallery"
+			},
+			"status": 308
+		},
+		{
+			"src": "/projects/",
+			"headers": {
+				"Location": "/projects"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/basement/",
+			"headers": {
+				"Location": "/services/basement"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/bathroom/",
+			"headers": {
+				"Location": "/services/bathroom"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/general/",
+			"headers": {
+				"Location": "/services/general"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/kitchen/",
+			"headers": {
+				"Location": "/services/kitchen"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/outdoor/",
+			"headers": {
+				"Location": "/services/outdoor"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/painting/",
+			"headers": {
+				"Location": "/services/painting"
+			},
+			"status": 308
+		},
+		{
+			"src": "/services/",
+			"headers": {
+				"Location": "/services"
+			},
+			"status": 308
+		},
+		{
+			"src": "/testimonials/",
+			"headers": {
+				"Location": "/testimonials"
+			},
+			"status": 308
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		}
+	]
+}
