@@ -119,6 +119,74 @@
 		{
 			"src": "^\\/_image$",
 			"dest": "_render"
+		},
+		{
+			"src": "^\\/about$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/api\\/hubspot-contact$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/blog\\/([^/]+?)$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/blog$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/contact$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/faq$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/gallery$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/projects$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/basement$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/bathroom$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/general$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/kitchen$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/outdoor$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services\\/painting$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/services$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/testimonials$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "_render"
 		}
 	]
 }
