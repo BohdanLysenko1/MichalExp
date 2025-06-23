@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm run build",
-  "framework": null,
-  "installCommand": "npm install"
+  "framework": "astro",
+  "installCommand": "npm install",
+  "env": {
+    "HUBSPOT_API_KEY": "@hubspot_api_key"
+  }
 }
